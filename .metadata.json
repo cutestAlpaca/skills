@@ -1,124 +1,338 @@
 {
   "version": 1,
   "entries": {
-    "caveman": {
-      "source": "https://github.com/mattpocock/skills/skills/productivity/caveman",
+    "ask-matt": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/ask-matt",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.746812+08:00",
+      "installed_at": "2026-07-12T19:44:54.838761+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
-      "subdir": "skills/productivity/caveman",
-      "version": "b8be62f",
-      "tree_hash": "17972a1bdbf5909b9dbdc435ad348f0bf45f8664",
+      "subdir": "skills/engineering/ask-matt",
+      "version": "391a270",
+      "tree_hash": "a8673d3dac18d59cf4b05c6ae64ebc7d82042d02",
       "file_hashes": {
-        "SKILL.md": "sha256:b4bb6fe3bf3da222993ca0aee5e7c6f5368b182dd30ce1172e8f8e3280eb7052"
+        "SKILL.md": "sha256:4465bad6bb9f7426743c1013d88740594da34e0f9934d375d93bbf981d5317b5"
+      }
+    },
+    "aws-wechat-article-assets": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-assets",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.666205+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-assets",
+      "version": "c83831a",
+      "tree_hash": "edb28ce6e22ae967c58f211fdc976b8f2321001e",
+      "file_hashes": {
+        "SKILL.md": "sha256:a2bdaddfd546f1c94a912929ffcc56f830015d82c0a573fe4723893103b2ea2a",
+        "scripts/import_presets_aws.py": "sha256:5d50213cdd0fc58ad015d9b986d496a8723cf1490b2d5f82a2f1c1148ee7eb28",
+        "scripts/product_image_ingest.py": "sha256:9d80b6ecc4e1dc8ca27616a89e2f9dce8c4eba2dbcd7f2656951aaa9b058a18b",
+        "skill.json": "sha256:2445a0e2dabae71feae688d9084f95c53588b44b6cb7152952d8e539478626ca"
+      }
+    },
+    "aws-wechat-article-formatting": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-formatting",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.72024+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-formatting",
+      "version": "c83831a",
+      "tree_hash": "f05e6e051a17f1f3c97c115fe0dde9347f3ee4ec",
+      "file_hashes": {
+        "SKILL.md": "sha256:6f56b1d98f2a55b4bf9998bf33e7a647f07ae2cd2c8773f9367ecc3be2ab51cc",
+        "references/presets/README.md": "sha256:a0386ed4999298e61ffe9938385d9a86626093824f6024345c4bb84cfa271a86",
+        "references/presets/themes/default.yaml": "sha256:6e5e6220e0c1e6b7138c7e7e65f3c2ab3bcfb497bffeae03520b907be8212040",
+        "references/presets/themes/grace.yaml": "sha256:fb3fb32b05754e47f5fd091c025309a9ad2b21bcc3b2016395c3e2af3db1c0a5",
+        "references/presets/themes/modern.yaml": "sha256:d9880c7fb268c3d3c4d2e05b852ff0a0307ab611a6eb7f0e6d08f5c5d32dc0e8",
+        "references/presets/themes/simple.yaml": "sha256:75cd468dfb497d66fb566588a956b6873b8474d3b384e4f2afd5c5e6cfd71963",
+        "scripts/format.py": "sha256:680d480c2c6ab2aa1cd369e44ca1eaaa646c17f79c2f69e69330ede864f03a58",
+        "skill.json": "sha256:07d5f73671131e22dd081efaeed675a3c87db787ef31d388333cef403f9bb895"
+      }
+    },
+    "aws-wechat-article-images": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-images",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.775268+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-images",
+      "version": "c83831a",
+      "tree_hash": "37ef4bb5a021cd89879dbde372a28902999c5e1a",
+      "file_hashes": {
+        "SKILL.md": "sha256:04032e580dc6b81304045c6d6db22b63d6aa3fdf2422e660a247e7a6f8e9ccd3",
+        "references/cover-styles/README.md": "sha256:40df33c142f6c0da193e3e3829a44f1c35929c1d386caf8da235833d795ee44f",
+        "references/cover-styles/大字报.example.md": "sha256:f37bf195f88c6cc21a3b1ce505cd01477d5349274028f0f9d647fb4912e8a2ad",
+        "references/cover-styles/插画.example.md": "sha256:8a88ba9d755a8489afa55adf8e33fc619919cf189e38f24e8aa2b1220d111924",
+        "references/cover-styles/科技风.example.md": "sha256:97767219a39b850a64f1d9343dcb5603ae927865e34634a916054d5f65295cd9",
+        "references/cover-styles/简约.example.md": "sha256:ffb25c35982bc24a3365a6f3a527835cf6c42b948b8c91357a4907909babd4ce",
+        "references/image-styles/auto-selection.md": "sha256:fde34d550863f19664777654f0a1bff2a826199747556617099acb6c91c090aa",
+        "references/image-styles/prompt-construction.md": "sha256:0ea88d1f9f99a108bf0116bb2c03e6e4511dbc24af359745bbf544a356dc0d93",
+        "references/image-styles/style-presets.md": "sha256:e97da5678675632469b4c2424745f5cadaa3499232e7bd892f0ce90f27bae29a",
+        "references/image-styles/styles.md": "sha256:3dc811685e7120dd76c6f1aa916f055940ec5d87a07036bddbe0706728a7fee5",
+        "references/specs.md": "sha256:6128aa052cd307fd556b8b83003fccf7b647b1612d31928ad82cb5b57e68cd38",
+        "scripts/image_create.py": "sha256:87ccd660a23e4607bf860a8061f009a92fd9b23b3ba53aa43dc5f121342dc98d",
+        "scripts/user_image_prepare.py": "sha256:ddfd1a23aa676a4ca9b4a318131fda671959f604e9fe2a3a4f7170c82510c148",
+        "skill.json": "sha256:e55c9731e173e4e2814294260b4e5272fb13f0685e3f080a8efc7fc0728a7232"
+      }
+    },
+    "aws-wechat-article-main": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-main",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.831731+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-main",
+      "version": "c83831a",
+      "tree_hash": "9bac14272cad7772316d880afa345e5a79c14586",
+      "file_hashes": {
+        "SKILL.md": "sha256:c0e3709f28d448a6f62409ff5e757dffa1f6b8f356e51eece75ddb3e853f6619",
+        "references/articlescreening-schema.md": "sha256:194bf90278de5058d94cd38aeaaf402ed1542ba643489a291206c2bd958362e3",
+        "references/config.example.yaml": "sha256:18b21d6fdc28d09c642a5f264f1c1ee5fa1a71402e0e4e5a8807c55c335da40c",
+        "references/env.example.yaml": "sha256:e4fc86e74574b39012b08c3c58d4bc661a93d2a82a25be13a4a15be9bf58c39d",
+        "references/first-time-setup.md": "sha256:c0d7a3e0d102882eb3e70d26ffd9ad19c724ebd49b52e5e66364d5a04f7eacbc",
+        "references/presets/closing-blocks/README.md": "sha256:9d39687c482583c0e0a9f628757db003a512e3b20c0d71f77ed5b00fab88c3a0",
+        "references/presets/closing-blocks/simple.example.md": "sha256:4fb789429e5739155acb9cc78e5863e6b759e233fbbc225c8724714df7ffec2e",
+        "references/presets/cover-styles/README.md": "sha256:c40fa68a4f3564479dc98e2a5b90d633efaa8bc5d5dbada22277a23ec1e89223",
+        "references/presets/cover-styles/简约.example.md": "sha256:ffb25c35982bc24a3365a6f3a527835cf6c42b948b8c91357a4907909babd4ce",
+        "references/presets/image-styles/README.md": "sha256:02b562c13d00d19711e1dfe86b43f95d2f41a54e7d13aa089cfdbe55f5f34bec",
+        "references/presets/image-styles/flat-vector.example.md": "sha256:a48ef6c7b7775b531d551eca57c9c6fe142b57d8d16a752391452c5805254eed",
+        "references/presets/review-rules.example.yaml": "sha256:aec3918c0b1ef3c200ff2297c7cd6f9852c8236df5c6ff6285650a37de134acb",
+        "references/presets/sticker-styles/README.md": "sha256:0fdf3e036dae73e48e280fe5f5367b39df78c39f8b1e61bb9a8efc6810338b24",
+        "references/presets/sticker-styles/default.example.md": "sha256:eb5627db38f5246b4e4a5663725302c407bdce2b3bb27aaf1d4f76e75f8c808d",
+        "references/presets/structures/README.md": "sha256:3d28bd36f588a5cae01d023bbf838cdde229b54a0ad9de3eee1b248196d7f67e",
+        "references/presets/structures/listing.example.md": "sha256:a72f1e209daa76393181d0b95ac449fc9ba2a8fb3a50b73840c75a7a337c3596",
+        "references/presets/title-styles/README.md": "sha256:271b4d1be89d2dc4224924f6f7fa076dada7ca9b648f527323c1c5ef3b120ce0",
+        "references/presets/title-styles/emotion.example.md": "sha256:d7cac0a6f9ad64275d0c531a4fa15a4acf786ec22f4786d91b499342317dfa46",
+        "references/presets/title-styles/suspense.example.md": "sha256:0eb7cf06bd0f3dac0be6e12e97fce39166c23a509431b45d7112861c60ff778a",
+        "references/writing-spec.example.md": "sha256:c960cf5547883df44aaa69a87ec2ce7c353bb6f82dce7cf7862582cc2b614332",
+        "scripts/validate_env.py": "sha256:63483938cb0e844da7e0ec32ca7b8bff2047292b80256b334c34a2e5f6aaa37a",
+        "skill.json": "sha256:b019ea6f3bdc257e3f8a97a51bf53203122281602e252bdf6cbd59054f3ab31a"
+      }
+    },
+    "aws-wechat-article-publish": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-publish",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.887071+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-publish",
+      "version": "c83831a",
+      "tree_hash": "285177d039b3fe0a6d72dfd097e2b0b4687c19ee",
+      "file_hashes": {
+        "SKILL.md": "sha256:17e3fffaef9aad42952ab831a8ee49835c88c054641ed60f68f43c42de90d84a",
+        "references/api-reference.md": "sha256:418a9ededd529c563b7506abca514bff063f9f742024bf30de908d501ff17a7c",
+        "references/pre-publish-checklist.md": "sha256:91e8761c9e2994f77c988ddb80c8324b8fb75cac3f153621c71cdae600c85be9",
+        "references/submit-guide.md": "sha256:581b1cf3ea957cd50d44e347eeb2f5d26fb6f0b8ee3bc4cf3323c5db1aac5e07",
+        "references/usage.md": "sha256:471481fbc199ba12b6055f38cdca4f5fab4afd11ffd7711517f327b1a10c56ca",
+        "scripts/article_init.py": "sha256:36dc31dda9bf7090174fee2ef9280d999ebac06ec5a3ff83cb82f8859f658e61",
+        "scripts/getdraft.py": "sha256:78e5de3a977cb372d243558efe71985d5357a845017593e82c676d42c85611f0",
+        "scripts/publish.py": "sha256:c9a889d8bfcf3fdccf35a1990dd99a3eb408dfb65fec320b2cd8c3b183e3dbeb",
+        "skill.json": "sha256:4f5a507e4467443cec9e2ca79868eac6b7daafb460a1912c19c7ecf88f848575"
+      }
+    },
+    "aws-wechat-article-review": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-review",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.94202+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-review",
+      "version": "c83831a",
+      "tree_hash": "6ef5c0af5fbe1fbb9bbe2282c967c243b047e369",
+      "file_hashes": {
+        "SKILL.md": "sha256:e57da5623952b9d2fc3e506df321000a9f8368e8064d7a48e3e59e434854a492",
+        "references/ai-flavor-check-samples.md": "sha256:5e9abce75956a9c091e436518c347456e6e5d5c84cb20076f9e358bc52806852",
+        "references/ai-flavor-check.md": "sha256:230fbed4c19ae27f1717b1ec2ad7f2ac04c7f604e44485ad0c5a567d0232b93e",
+        "references/checklist.md": "sha256:07399b3a25840fd75730365046104e94726b7a5952c8ffb4e86f55a6c3258571",
+        "references/output-format.md": "sha256:410b22e67d46126e9bd47b1d6bd9668f2a280754b680a71b5ce8dcb31dd58862",
+        "skill.json": "sha256:73acd26fcb30d39edfb4605ebb3db68500f080c4ac59fdac5472e5e1128f0c25"
+      }
+    },
+    "aws-wechat-article-topics": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-topics",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:33.996637+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-topics",
+      "version": "c83831a",
+      "tree_hash": "2fd08f519d2ec65cc2101682f5376332531e1352",
+      "file_hashes": {
+        "SKILL.md": "sha256:969ab720dabc6076ecd6b2925d41f92c6b0d8a8177fb33b90a705b5f9cf173b1",
+        "references/output-format.md": "sha256:eabee03c073a9bc8aa2ceacea34d6044b8f7276e3eb675a67590e451cbaff16b",
+        "references/research-strategy.md": "sha256:732e41ca0bf049cd528ad4d89211dc4ca4c8a7444b10ed0dd486ad80442a55b1",
+        "references/title-presets.md": "sha256:f16cbecd2afdd5cd01e166445ab2f84ee5ac98e2ca6eb44a9cf3cd19a7aad970",
+        "skill.json": "sha256:3634b01a3dd4783c6e9d007de4fb86cdae20fd45ac94dbd63e5d052078903862"
+      }
+    },
+    "aws-wechat-article-writing": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-article-writing",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:34.051434+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-article-writing",
+      "version": "c83831a",
+      "tree_hash": "0a43adf4d5cfc185c04e50aebfa51a7fb705577c",
+      "file_hashes": {
+        "SKILL.md": "sha256:a60f38d5c6cee14764a679518d262d1f5a6278113d0ae7ba8d88161bfb3e4a47",
+        "references/structure-template.md": "sha256:a9c5ebb0b92d0aefcd96a0452c6b7e51bd2d530ded1aa3d257eeeec89510ab60",
+        "references/usage.md": "sha256:b8fda89fa464497ce0d71e7cce45776ddce9b58a66db496faead12de2cc24a09",
+        "scripts/write.py": "sha256:d33c7cee175d1aceaf021cfce029a2adb04ff0fcbb23801d5b684c09f5598431",
+        "skill.json": "sha256:bf10da50dcdfadef04c5394f338205f64f035b6dad7656e1d7ea63029e3dd71a"
+      }
+    },
+    "aws-wechat-sticker": {
+      "source": "https://github.com/aiworkskills/wechat-article-skills/skills/aws-wechat-sticker",
+      "type": "github-subdir",
+      "installed_at": "2026-07-24T12:06:34.105855+08:00",
+      "repo_url": "https://github.com/aiworkskills/wechat-article-skills.git",
+      "subdir": "skills/aws-wechat-sticker",
+      "version": "c83831a",
+      "tree_hash": "23ad3056a11b272c8efb5c30d70660e4a6718933",
+      "file_hashes": {
+        "SKILL.md": "sha256:05afed16c9db6a50a390a2144fe85bffc6108064d82c314029cddd09d1a9a653",
+        "references/checklist.md": "sha256:f4068d71f42cbc248e7e9f6b221166016a5041f73c2912093a79c91000986eb7",
+        "references/workflow.md": "sha256:e076c30e4ede187a3f3e9f4a7d0045c24c179c9beb1b8c04c0e436c0a349a5c6",
+        "skill.json": "sha256:cf661d3bde3cc191a1a19d0ca52f619b78c7390b569b71cd5488c65caf5c4131"
+      }
+    },
+    "claude-handoff": {
+      "source": "https://github.com/mattpocock/skills/skills/in-progress/claude-handoff",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.931897+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/in-progress/claude-handoff",
+      "version": "391a270",
+      "tree_hash": "4da139722cd74d7be7927f9c70a107cd73e05b0e",
+      "file_hashes": {
+        "SKILL.md": "sha256:bbb25773158d78f610461e4041ffb56fe871cb297626e1f52b0535a9083b7996"
+      }
+    },
+    "code-review": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/code-review",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:54.902544+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/code-review",
+      "version": "391a270",
+      "tree_hash": "9df6fdac9c49f20944411ee45e1582e718d9a657",
+      "file_hashes": {
+        "SKILL.md": "sha256:6a65cc61114f96db07ec41e3920e67c9c5bf70dd6e0901eb9460ebcb2bdc209f"
+      }
+    },
+    "codebase-design": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/codebase-design",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:54.968915+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/codebase-design",
+      "version": "391a270",
+      "tree_hash": "c5dfc023e5ae146a4ceb9c509024f6ffe13db4a3",
+      "file_hashes": {
+        "DEEPENING.md": "sha256:125e6b77413ad2bc7cf7a772bc74336d580a50f9e797db2178ed133d62333d06",
+        "DESIGN-IT-TWICE.md": "sha256:21c3264953bd30ee87b181a3ccaf0e70649f461e5ffd7dc654acee4ba1788b31",
+        "SKILL.md": "sha256:a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad"
       }
     },
     "dbs": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.122296+08:00",
+      "installed_at": "2026-07-12T17:51:21.004077+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs",
-      "version": "9c79402",
-      "tree_hash": "62d42daadae19a9912d03f4530d4addfa3274208",
+      "version": "658c41c",
+      "tree_hash": "4d2a160782f032353a9dbfb2288f1fc8c480fabc",
       "file_hashes": {
-        "SKILL.md": "sha256:747974e0c976b7d02bc693d746512eacc440fb83e04ac46c26776e051cb60f69"
+        "SKILL.md": "sha256:c161133e937636367409c8141d8ef22eb1b88008dd365625e088fc291d4be7ce"
       }
     },
     "dbs-action": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-action",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.177739+08:00",
+      "installed_at": "2026-07-12T17:51:23.524726+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-action",
-      "version": "9c79402",
-      "tree_hash": "0e7afdddb4f5e02e221664897a4feb9174c6032c",
+      "version": "658c41c",
+      "tree_hash": "88c1740f9305dbe85c909299a3bcd6947eda2d22",
       "file_hashes": {
-        "SKILL.md": "sha256:d3b240ea305923113c09bc8d1353567c02c858abb6ad2361f687cec1bd85e926"
+        "SKILL.md": "sha256:101e88462742eee69ccca8fc77f7492dccf1041e5ed2e3a80592df1645d4a22e"
       }
     },
     "dbs-agent-migration": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-agent-migration",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.235809+08:00",
+      "installed_at": "2026-07-12T17:51:26.255984+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-agent-migration",
-      "version": "9c79402",
-      "tree_hash": "094c06b250f142c5e6cba20a616f73faea88986b",
+      "version": "658c41c",
+      "tree_hash": "a5ffb4c169de24ff7024d73f520a10102398fe04",
       "file_hashes": {
-        "SKILL.md": "sha256:ce2b40d979b679b146c17da5133e5433bdda9674ad743e2f740cff0ec64bb0d5"
+        "SKILL.md": "sha256:c6d567f7ae6110307227cb9fb3deb924402ea87caf3d885eb7a30da343e48947"
       }
     },
     "dbs-ai-check": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-ai-check",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.291923+08:00",
+      "installed_at": "2026-07-12T17:51:28.599048+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-ai-check",
-      "version": "9c79402",
-      "tree_hash": "237ea4c321512a7e1f289264e5636faa5cc960e0",
+      "version": "658c41c",
+      "tree_hash": "359c396778a98d137e914854ab909e3a9741637a",
       "file_hashes": {
-        "SKILL.md": "sha256:3b0ce186348cf8259e4e9d39663bc310d1b6b0a76bcc6094a2c7b64003b1ea1c"
+        "SKILL.md": "sha256:f0fc3d2c5b1f7b236c041c42f7ee5326cdbdcb70731adb2a81f0c1219f14a94c"
       }
     },
     "dbs-benchmark": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-benchmark",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.346702+08:00",
+      "installed_at": "2026-07-12T17:51:35.914891+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-benchmark",
-      "version": "9c79402",
-      "tree_hash": "eafdb07e6bc44e96bd3774f82b5dc415d3a56e36",
+      "version": "658c41c",
+      "tree_hash": "46eee9f9cbfc8aad4b7584daca2ab4c083791eca",
       "file_hashes": {
-        "SKILL.md": "sha256:dcbb1a5cb39e66b6d9ace96d827e6a75197d73c7b64283859261ce759b7ee44d"
+        "SKILL.md": "sha256:24c110fb1fbc775ae5f9d8cfde0ed6412e4631b30b87e8514597cad128268594"
       }
     },
     "dbs-chatroom": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-chatroom",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.399978+08:00",
+      "installed_at": "2026-07-12T17:51:38.447278+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-chatroom",
-      "version": "9c79402",
-      "tree_hash": "fc2fa086a6f3927c1de86e56a06299098a367bdf",
+      "version": "658c41c",
+      "tree_hash": "12c462f2fcd246db3658ef6aff573fdf5e1ca3f7",
       "file_hashes": {
-        "SKILL.md": "sha256:3fe871bb89e4bcedee96695dbf495099819c2771a8b1477d13404d0fc917e539"
+        "SKILL.md": "sha256:df623eec9cafda6ae5815eee22d736e32dc261b3b3ddd5107d81e9473c6d8ff0"
       }
     },
     "dbs-chatroom-austrian": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-chatroom-austrian",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.453096+08:00",
+      "installed_at": "2026-07-12T17:51:40.829558+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-chatroom-austrian",
-      "version": "9c79402",
-      "tree_hash": "5ed851fee44e86c534b2435b593b2e662350a14c",
+      "version": "658c41c",
+      "tree_hash": "a14f6e972565b7458d40ef9799052c4018dce7ae",
       "file_hashes": {
-        "SKILL.md": "sha256:6ea4d9ed2452df493742207f9d6c2365df5655fbe43d55c57e8fe0e384b97c6e"
+        "SKILL.md": "sha256:3cf22f8d7cb31a822c352e9c8f88430293987516c25976a510db2adbed892604"
       }
     },
     "dbs-content": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-content",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.50907+08:00",
+      "installed_at": "2026-07-12T17:51:43.634337+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-content",
-      "version": "9c79402",
-      "tree_hash": "00ea1d1bb279f10acab56d52dce60af9fe9f5f6c",
+      "version": "658c41c",
+      "tree_hash": "87ac98b8e390a6d3c68670573b5d48c9ddfbe875",
       "file_hashes": {
-        "SKILL.md": "sha256:159b2092e68490fa30f894cbf1abbedb8a0288ffc1aef5fa1ff2bae77b2edd6b"
+        "SKILL.md": "sha256:6187b5c93e724c3b23a8c272a099cb087589cd4c8210896c19006ca95c221fa4"
       }
     },
     "dbs-content-system": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-content-system",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.711516+08:00",
+      "installed_at": "2026-07-12T17:51:51.125273+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-content-system",
-      "version": "9c79402",
-      "tree_hash": "13941ceb55cd8c35a3cf79cfae0ee3aafb9aa47a",
+      "version": "658c41c",
+      "tree_hash": "b628832194e5eacbe2d9d712284961f579c2feca",
       "file_hashes": {
-        "SKILL.md": "sha256:7f7256fe157b6a6192af83c4c29cd89656049ceb77fe08f562e17b19d5e27bb3",
+        "SKILL.md": "sha256:d434ae785cfb4e44ece91c9b90667e7a5c88147532a82f27a903a11a2f66036a",
         "docs/acceptance.md": "sha256:1a5b7c5a94f8eb4ef18e4a1dc544222c217a1a8c80d13fece1a19a3ed7cf0242",
         "docs/quickstart.md": "sha256:54ee6935d156302ab85863c81455b55993b0075548483e341b69002df1a1d839",
         "scaffold/root/AGENTS.md": "sha256:086efd98dbba1358956d7f645affd06646c2ba1fd6e411174ddd75411051372b",
@@ -153,215 +367,229 @@
     "dbs-decision": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-decision",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.769523+08:00",
+      "installed_at": "2026-07-12T17:51:53.526057+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-decision",
-      "version": "9c79402",
-      "tree_hash": "a9cdc7937f8f6f40e840b41644913b550955edab",
+      "version": "658c41c",
+      "tree_hash": "365c5fcda34ff7931f4bd8c7a9a6f8f26e8ed57d",
       "file_hashes": {
-        "SKILL.md": "sha256:bb17ae9286080fe7967cd30c923f40b4d4f69e3897e42d78292f3e26ffc39aa3"
+        "SKILL.md": "sha256:162883264146e25e380292e9e1293a724196bc87955449ef23c824f57fa2886f"
       }
     },
     "dbs-deconstruct": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-deconstruct",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.825122+08:00",
+      "installed_at": "2026-07-12T17:51:55.834911+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-deconstruct",
-      "version": "9c79402",
-      "tree_hash": "9a7b1376880e4eb1a68b73866f875214acf5adaf",
+      "version": "658c41c",
+      "tree_hash": "004b24ec18b20535fd958ffbd3d20f358c21b332",
       "file_hashes": {
-        "SKILL.md": "sha256:c9df9fc00b4248744b3ea4a365170c5cd445491710b83a72666f5d64d0ceadec"
+        "SKILL.md": "sha256:0ecff9ea27487d28c3b040a35f1fccaa4bff8d108cbaab64fb2c3f76a0398d29"
       }
     },
     "dbs-diagnosis": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-diagnosis",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.88524+08:00",
+      "installed_at": "2026-07-12T17:51:58.194299+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-diagnosis",
-      "version": "9c79402",
-      "tree_hash": "0868173608d12a7e960b59a45ce11f118615d9f8",
+      "version": "658c41c",
+      "tree_hash": "16e4a7d604a58f8ce14a0e4963c71b44df8be508",
       "file_hashes": {
-        "SKILL.md": "sha256:91e77118b094aa0cd2b381151f56817e04c3805def0e4b8d0e58b6524cdb21c1"
+        "SKILL.md": "sha256:17d82f7f67422571fb3a7b1a14e0e04f249dfd7f009390713b9fb311341a36de"
       }
     },
     "dbs-goal": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-goal",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.941645+08:00",
+      "installed_at": "2026-07-12T17:52:00.860719+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-goal",
-      "version": "9c79402",
-      "tree_hash": "0b427c89cf65ef18074b2855cced403439186ca4",
+      "version": "658c41c",
+      "tree_hash": "5d9f3754f8365359dab5f0bb3dc0a8e03d987630",
       "file_hashes": {
-        "SKILL.md": "sha256:d5f950496c19d26140d0058871d9e568a36f4a101b37bb50683b21a71620f851"
+        "SKILL.md": "sha256:6b7986e4b817b401abc78efd5dd37bdea15c92036c85fc5808405ec4e4beeeb4"
       }
     },
     "dbs-good-question": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-good-question",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:13.999847+08:00",
+      "installed_at": "2026-07-12T17:52:03.229307+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-good-question",
-      "version": "9c79402",
-      "tree_hash": "6c5b424347c8655ff15d85f6cea5b7fad0946811",
+      "version": "658c41c",
+      "tree_hash": "cadc10bbb71676a2b6519fa65f2ac411e55281d3",
       "file_hashes": {
-        "SKILL.md": "sha256:9f09393cbc0aa8d60e7a60b608a34f9014b29609c5d22ed80a237733631024bb"
+        "SKILL.md": "sha256:b7a11a9f8bd196bf36c493cc8bc0dec5dfec82927d688b2df48489c1e3240e02"
       }
     },
     "dbs-hook": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-hook",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.056775+08:00",
+      "installed_at": "2026-07-12T17:52:05.665319+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-hook",
-      "version": "9c79402",
-      "tree_hash": "6559ff6524316bbdf4e2b05c2001d3bc0b6b0915",
+      "version": "658c41c",
+      "tree_hash": "bd1abc090539b2421039f119dd05196ce0128f9c",
       "file_hashes": {
-        "SKILL.md": "sha256:b406be716e55784080d55dacf11c2bc023a2f530b01cc80ec965357ec2ff7c08"
+        "SKILL.md": "sha256:6e390d47956cdcc7e8e57529086436bb5492b73633647ad4e03e384b7041707d"
       }
     },
     "dbs-learning": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-learning",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.11254+08:00",
+      "installed_at": "2026-07-12T17:52:07.998361+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-learning",
-      "version": "9c79402",
-      "tree_hash": "c22d1f42b8673596af1ac5439c948cc4adeb57e2",
+      "version": "658c41c",
+      "tree_hash": "518bb3e18959fed46017607063f43b5c68144c6f",
       "file_hashes": {
-        "SKILL.md": "sha256:90a1280d7395ebcd674db0d7fcaf4ee990ce38161d06741a3f6c59b6af21b60d"
+        "SKILL.md": "sha256:b5ed26092ebef0dd6859068f82094a8967a55c3c9b4c9150d6ef7908d73c0b5d"
       }
     },
     "dbs-report": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-report",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.169044+08:00",
+      "installed_at": "2026-07-12T17:52:20.475052+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-report",
-      "version": "9c79402",
-      "tree_hash": "fd1291d9f06a9e84e4df40df553915d7a63fd065",
+      "version": "658c41c",
+      "tree_hash": "00216fc5af688ab407d61887b6ccdf971fec052e",
       "file_hashes": {
-        "SKILL.md": "sha256:f732da94f04965e7656c163ee8c428bf145985548e05c98db36572d3bb3d4bc5"
+        "SKILL.md": "sha256:4245eb7ba93a882dfe7ecd031639b4f9bcc75e8304dd4c1e237abb79954f1518"
       }
     },
     "dbs-resonate": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-resonate",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.226314+08:00",
+      "installed_at": "2026-07-12T17:52:22.862281+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-resonate",
-      "version": "9c79402",
-      "tree_hash": "135e23df66e2ad1432258589fa3ae5896fefc938",
+      "version": "658c41c",
+      "tree_hash": "acd38c6f3adf9398af57fcf8ea6732daf8dea2a5",
       "file_hashes": {
-        "SKILL.md": "sha256:c1c870d5622a223ee062262e31f04bdbec8a5487cb34633857b6a9c22ab0411d"
+        "SKILL.md": "sha256:8c6f48027e1797aa0d83bf3d6cc2d04eb0985c615950f2804ffb46c6ca29b84a"
       }
     },
     "dbs-restore": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-restore",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.281683+08:00",
+      "installed_at": "2026-07-12T17:52:26.172048+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-restore",
-      "version": "9c79402",
-      "tree_hash": "58ea361709fd32c31d80cc7d35fdfab60fe34448",
+      "version": "658c41c",
+      "tree_hash": "82f4ffede1435deb202d836ceafd9d9993c628a6",
       "file_hashes": {
-        "SKILL.md": "sha256:ab2f889c512ee1bab76a9e0d535be060171ea4f3b313215225c86caf8b875e98"
+        "SKILL.md": "sha256:1394850d76916af1a8947bce9908f1ea5ef769fb556a46b5a559f1b426c526e3"
       }
     },
     "dbs-save": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-save",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.337641+08:00",
+      "installed_at": "2026-07-12T17:52:29.292699+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-save",
-      "version": "9c79402",
-      "tree_hash": "2ca5100368942615be973d5aba833d25b10da425",
+      "version": "658c41c",
+      "tree_hash": "91e39f54b35126fb80755a43b22efc7993818f8d",
       "file_hashes": {
-        "SKILL.md": "sha256:43b7e2e28c8920d8075d61c7fa20a254c9503c0c713d40e4dcbb049ab9fc845c"
+        "SKILL.md": "sha256:7fb329380c852f6515fb2879d1cbffa5d592bf4ac1d5e1eb9a6f8d13b8432cb1"
       }
     },
     "dbs-slowisfast": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-slowisfast",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.394018+08:00",
+      "installed_at": "2026-07-12T17:52:31.574297+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-slowisfast",
-      "version": "9c79402",
-      "tree_hash": "df3ea8645f1120182d8128d2ad215e9c493347c4",
+      "version": "658c41c",
+      "tree_hash": "66ddd6f58ce8df0c606941afabf74cdfd3a57699",
       "file_hashes": {
-        "SKILL.md": "sha256:ebeb763ed3c4d66d5ea88dd4c8414e8db8dec97a848184c5be1fa93a95305fc0"
+        "SKILL.md": "sha256:6f35d9e1de944c57184c18eba8d269d78d184505e535dd6924fa30a6c172c53a"
       }
     },
     "dbs-spread": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-spread",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.448631+08:00",
+      "installed_at": "2026-07-12T17:52:35.167157+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-spread",
-      "version": "9c79402",
-      "tree_hash": "fb4c752bd2c15a0a574b70676e07aaf12d66cd31",
+      "version": "658c41c",
+      "tree_hash": "8626de6caef52f12a617e1fffae139ee2f1b19c1",
       "file_hashes": {
-        "SKILL.md": "sha256:111ad78667b9a1c39b1170dc697fca748831dcf9d8d7cc9afef2564c8c083a0c"
+        "SKILL.md": "sha256:10b8f05f5a7f5f4792cfa8522f55acc34632af583b76d50582864afb76173b4f"
       }
     },
     "dbs-xhs-title": {
       "source": "https://github.com/dontbesilent2025/dbskill/skills/dbs-xhs-title",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:43:14.512598+08:00",
+      "installed_at": "2026-07-12T17:52:37.562151+08:00",
       "repo_url": "https://github.com/dontbesilent2025/dbskill.git",
       "subdir": "skills/dbs-xhs-title",
-      "version": "9c79402",
-      "tree_hash": "2488ef28bdb65cd66fa6f9ec848ec5464d75ca41",
+      "version": "658c41c",
+      "tree_hash": "9f797ce856e8f5ba9261984008c446565a74791e",
       "file_hashes": {
-        "SKILL.md": "sha256:f4ebeff529c0526a476708b15b7c88b00791a5bc2914d4a0d15957b2187e7919"
+        "SKILL.md": "sha256:0034c63254b9a5dd4ec57fb7d9691e0a97acfb250e7c75508494e1a79a3af79b"
       }
     },
     "design-an-interface": {
       "source": "https://github.com/mattpocock/skills/skills/deprecated/design-an-interface",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.66412+08:00",
+      "installed_at": "2026-07-12T19:44:54.583551+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/deprecated/design-an-interface",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "59d5eca0fd23930d3d3821aa9da507f1bdb8a348",
       "file_hashes": {
         "SKILL.md": "sha256:a2596e9fa2d50e23ba014f64a5b8f9df4eb56b846a52cad152899ef5eb97b085"
       }
     },
-    "diagnose": {
-      "source": "https://github.com/mattpocock/skills/skills/engineering/diagnose",
+    "diagnosing-bugs": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/diagnosing-bugs",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.8413+08:00",
+      "installed_at": "2026-07-12T19:44:55.03345+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
-      "subdir": "skills/engineering/diagnose",
-      "version": "b8be62f",
-      "tree_hash": "43d464d0e9d1049b9d525975c0f7367ab7e01a5f",
+      "subdir": "skills/engineering/diagnosing-bugs",
+      "version": "391a270",
+      "tree_hash": "0ecacff09e31245c34727abe7cb7cff71f615a35",
       "file_hashes": {
-        "SKILL.md": "sha256:28886402bbfa0470248086eab9106a103b964b76ae9496e63ff0c8a6761b6d13",
+        "SKILL.md": "sha256:7a0779480f323a66d109404646bcc1a14bf0232b45b3e3ea93b652a035718acb",
         "scripts/hitl-loop.template.sh": "sha256:b2932630950e5210075bcd6f850e5accf30c101c5367b29eac3a29b4dd8084c8"
+      }
+    },
+    "domain-modeling": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/domain-modeling",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.097231+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/domain-modeling",
+      "version": "391a270",
+      "tree_hash": "028a0e44b23909cbdd715aa00546d5c1c46ae4d6",
+      "file_hashes": {
+        "ADR-FORMAT.md": "sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
+        "CONTEXT-FORMAT.md": "sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597",
+        "SKILL.md": "sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579"
       }
     },
     "edit-article": {
       "source": "https://github.com/mattpocock/skills/skills/personal/edit-article",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.656794+08:00",
+      "installed_at": "2026-07-12T19:44:56.639304+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/personal/edit-article",
-      "version": "b8be62f",
-      "tree_hash": "d86427caec7ecdccd963eb5dabc300e2c2e243a4",
+      "version": "391a270",
+      "tree_hash": "d3e748a6f03a951c46f4e3621a850346ede89a87",
       "file_hashes": {
-        "SKILL.md": "sha256:cc372fb25b552017765aa0dac1b108f77eaee4555d607041efc1ad5d8c995b4a"
+        "SKILL.md": "sha256:e10fba546f45357fe0aaa7494b9e186910d4525818d19f9b2ad6f28cc506aa5e"
       }
     },
     "git-guardrails-claude-code": {
       "source": "https://github.com/mattpocock/skills/skills/misc/git-guardrails-claude-code",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.475231+08:00",
+      "installed_at": "2026-07-12T19:44:56.378619+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/misc/git-guardrails-claude-code",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "f02ae7c2de75270e93a200e11a7e466ece897353",
       "file_hashes": {
         "SKILL.md": "sha256:03c4de7613c712aea336d64c467ea3ed14be2cbd52345925fe949c75c01c29f7",
@@ -371,14 +599,14 @@
     "golang-benchmark": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-benchmark",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:17.929583+08:00",
+      "installed_at": "2026-07-12T17:52:46.801928+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-benchmark",
-      "version": "a5e0e59",
-      "tree_hash": "bd9019602e2f2baab1c8074e32ea86ac3f8d5dc1",
+      "version": "4881c01",
+      "tree_hash": "db8993e784ed94b1ec4866662a518df1b313bb2b",
       "file_hashes": {
-        "SKILL.md": "sha256:27d09fbf1a0ba188b061b8e3d9cf99bfbf7b19f169d541a6fe2ac7064543f666",
-        "evals/evals.json": "sha256:3c0bfb6f93dec158f30cec0484eef76a6649c0c89766a00026bf6fde02868a92",
+        "SKILL.md": "sha256:aac7ab207878a9cd490ee52946e96ed3849ea48ce90142f37186acc0549d8d36",
+        "evals/evals.json": "sha256:13a799c25fb998e1f5dda7cd58123996857b4f2a448af5eb46995e090cccaa5a",
         "references/benchstat.md": "sha256:0145a98c5a9be29078d3281e9ebcd670b6f402abbf4bf29facc995f2569342d9",
         "references/ci-regression.md": "sha256:3fec5ce7c0f3c4f17b3102702bae64534794343eef7bcb4577031b012e955a54",
         "references/compiler-analysis.md": "sha256:2cb7bde63cb35971188b26346c8b4a0031b14d6b213c06f8caef38bf238938ad",
@@ -392,10 +620,10 @@
     "golang-cli": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-cli",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.049857+08:00",
+      "installed_at": "2026-07-12T17:52:49.048586+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-cli",
-      "version": "a5e0e59",
+      "version": "4881c01",
       "tree_hash": "863ac197f8994987b68ccff265d61b0c0edc8481",
       "file_hashes": {
         "SKILL.md": "sha256:518891186ce2d2416e97030fcb5381e81ecadf58d641ef7484aa33d2cacf2c75",
@@ -417,13 +645,13 @@
     "golang-code-style": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-code-style",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.112541+08:00",
+      "installed_at": "2026-07-12T17:52:51.364901+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-code-style",
-      "version": "a5e0e59",
-      "tree_hash": "8f538e321df453a4269af3bb64e562aa08fe72a7",
+      "version": "4881c01",
+      "tree_hash": "77a4f1448571cf897601b49ef6636bf2de6cf4d5",
       "file_hashes": {
-        "SKILL.md": "sha256:185d70f9d0824b612f3f3bc8c0542571bacaf0b47be2f4bbdb1eb2029e26ad10",
+        "SKILL.md": "sha256:a9e7b92bfaf9233d53ece85b475ce67afb66b3e8d45c15a0df21a3e3c8e5d3c1",
         "evals/evals.json": "sha256:a439625516667ab0e60e58003294da3c0cf5a579d1c4741c5b5a57514ec35356",
         "references/details.md": "sha256:3969d18fb54e59c032de0463b44b6b5bd125dfe8b726ef0f009190da81f3df07"
       }
@@ -431,13 +659,13 @@
     "golang-concurrency": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-concurrency",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.190738+08:00",
+      "installed_at": "2026-07-12T17:52:54.573503+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-concurrency",
-      "version": "a5e0e59",
-      "tree_hash": "3a91d8509420dd4405aecd9e0bb812055a304df7",
+      "version": "4881c01",
+      "tree_hash": "4d51cc1897c4ac6f89f77c907fc01cf11a052120",
       "file_hashes": {
-        "SKILL.md": "sha256:8e68d3f89da84b2fd61cd9c37c6e902d94ce4dcc45d421988ba4e67f556454bd",
+        "SKILL.md": "sha256:b3dcfe2b8da35c1572ee544d8e5bd3891590a20b0654d0e7537e1e7dfdc6ee0a",
         "evals/evals.json": "sha256:4b11574adf2c217a1ea2ad9626c86b771d254be1e8662a3cdf5f5494500f7287",
         "references/channels-and-select.md": "sha256:550b430aaed72c0585bf823117301c22ec8ead0d0213c53dd7d1731408b9ae9a",
         "references/pipelines.md": "sha256:89321d64196cab5e4113f0d1301695324daf2f09b1cd12d7076a048a348b440a",
@@ -447,10 +675,10 @@
     "golang-context": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-context",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.265559+08:00",
+      "installed_at": "2026-07-12T17:52:56.884993+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-context",
-      "version": "a5e0e59",
+      "version": "4881c01",
       "tree_hash": "80c0cda7cf45f8e13b207c005ad7bf4383caf2c5",
       "file_hashes": {
         "SKILL.md": "sha256:2c801e7a59f3885058ed70d19423f8c943525294182796c46101c4a554ca4cb1",
@@ -463,10 +691,10 @@
     "golang-continuous-integration": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-continuous-integration",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.388145+08:00",
+      "installed_at": "2026-07-12T17:52:59.261033+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-continuous-integration",
-      "version": "a5e0e59",
+      "version": "4881c01",
       "tree_hash": "4e6f0461867264c10328943417438ace26521553",
       "file_hashes": {
         "SKILL.md": "sha256:f2600ad02567e9d3f3d69e8605ad9eb2d817a3143f09a7658bb62ff326ecd9f3",
@@ -493,13 +721,13 @@
     "golang-data-structures": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-data-structures",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.475728+08:00",
+      "installed_at": "2026-07-12T17:53:01.749547+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-data-structures",
-      "version": "a5e0e59",
-      "tree_hash": "ebf065876644a12bbd317efda13be1d7872725b0",
+      "version": "4881c01",
+      "tree_hash": "c778323b9a06ad2a29ad7c5b8925557ecf0bf4b0",
       "file_hashes": {
-        "SKILL.md": "sha256:164865800cfaf82a83be949a1c35464487496eed199dffc9e2d78369b9af8cd4",
+        "SKILL.md": "sha256:c3f517f36d04fa1859106f045a41a74280455e23421fc35d7a94ec8d7b9343d2",
         "evals/evals.json": "sha256:68608da5a4f672da5e288dfa57f3052a3016246f942c7bd16bb0a46c78002fd8",
         "references/containers.md": "sha256:2e186f6f21aed6a09f63981f24998732df3a9d1364199a05a9d345e7f84a6dc1",
         "references/generics.md": "sha256:6b7bea407c3635b196c9056cbe151cb42d33ae0f4bc1f94028407ec13c60638e",
@@ -511,10 +739,10 @@
     "golang-database": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-database",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.538565+08:00",
+      "installed_at": "2026-07-12T17:53:04.372252+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-database",
-      "version": "a5e0e59",
+      "version": "4881c01",
       "tree_hash": "026d9b44a2554c21e42b4532b63ab3f2abf0b70d",
       "file_hashes": {
         "SKILL.md": "sha256:a69c730085d906c6ed420b9d9e98b026fdf2b3524cfbf3cda9db16db58496bf3",
@@ -528,13 +756,13 @@
     "golang-dependency-injection": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-dependency-injection",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.597704+08:00",
+      "installed_at": "2026-07-12T17:53:06.872764+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-dependency-injection",
-      "version": "a5e0e59",
-      "tree_hash": "a741954c4231295aa853fcfd85ea28cd6b88116a",
+      "version": "4881c01",
+      "tree_hash": "8ddd8f838133c7f6e6b2c0000b613f9388ade8a3",
       "file_hashes": {
-        "SKILL.md": "sha256:bae7ee09f193c59aed78d8925f8b1ff905d5beff7b1f28e204e254a1ee30d8c9",
+        "SKILL.md": "sha256:d6382e3c50f3399eda006ec0491e2e656d8c388d1bbed9b036c45219e5669729",
         "evals/evals.json": "sha256:91fb15b20790e8acb509e9ef3947777aa6f48d2bbccc781889828f319d73a4c7",
         "references/google-wire.md": "sha256:009c413c3de5b463b47d2035a4384abe24eccf9c66db934ec7572fbdb2de8068",
         "references/manual-di.md": "sha256:c8a7fc68f2ef7709ab69bc4b58e5270ca9675f7d77d4d71234a9ab3a1bcbf623",
@@ -545,13 +773,13 @@
     "golang-dependency-management": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-dependency-management",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.655911+08:00",
+      "installed_at": "2026-07-12T17:53:09.435738+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-dependency-management",
-      "version": "a5e0e59",
-      "tree_hash": "afd5cfe33d8ef725287d882a51310e6577e41592",
+      "version": "4881c01",
+      "tree_hash": "5dd9fcfa88c51b0842f803bb512c949febb304c8",
       "file_hashes": {
-        "SKILL.md": "sha256:b693dbe6d810c938664df94c79f1d7afc45437856bbff1db73269c6fe2ace4bb",
+        "SKILL.md": "sha256:cdbb521556cfb3e550ac98d1bfc6486398c65d3744e2942264aa89d4f4bd63b9",
         "evals/evals.json": "sha256:5770c0d59bc309930ba8f3c121f81c6a9afae42d2939f157004bd05a0fc566f4",
         "references/auditing.md": "sha256:7edc2ee2e5a55a764e9a7dc73c482d197207722bd643362ab1d3cf5fa1687ec2",
         "references/automated-updates.md": "sha256:6ce7926a2f895fc2ccca7735521902f2575c73cf919c2788fb3bf740fb868b7b",
@@ -564,13 +792,13 @@
     "golang-design-patterns": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-design-patterns",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.716117+08:00",
+      "installed_at": "2026-07-12T17:53:12.90806+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-design-patterns",
-      "version": "a5e0e59",
-      "tree_hash": "c1f10a4194b92c15524404c8538a0960e9c6f5d6",
+      "version": "4881c01",
+      "tree_hash": "96fcb3546dd8c8423b8d3f1abd3cade8f84ac5b9",
       "file_hashes": {
-        "SKILL.md": "sha256:facb970dcff3632155de8382d1ceb4afb55ff20d4335283f52a9072debc3836b",
+        "SKILL.md": "sha256:df5baa30abf0cffef35ae9ac3307eb75fded729b90802641eba42e4423bc6785",
         "evals/evals.json": "sha256:cb27f44e4595ac7e00d41005db706e9c9f700e16d5399b23f60dad671ba6025e",
         "references/architecture.md": "sha256:040a8206ec8cdbfcf5032c9692ad61389902093c239fbd1797893217ec9d26c9",
         "references/clean-architecture.md": "sha256:38137538524bd0e91bf57ee6a3f42848791fef38e0459941e18ad5ff981f3913",
@@ -583,13 +811,13 @@
     "golang-documentation": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-documentation",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.773045+08:00",
+      "installed_at": "2026-07-12T17:53:15.385133+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-documentation",
-      "version": "a5e0e59",
-      "tree_hash": "9ffdd7fc4b2e0f84381574743c2ac0f1cdc74242",
+      "version": "4881c01",
+      "tree_hash": "8cb0e0e830f5621aea73572e14b2c3f2a80cf76c",
       "file_hashes": {
-        "SKILL.md": "sha256:e31937173b740345f23c295ac9bef3eb0a154eed76aa502bcb0db303b3866946",
+        "SKILL.md": "sha256:7aad58976ac0a2c1535aa13467462ddf6c1c05edef277ecf26781dd5081a2327",
         "assets/templates/CHANGELOG.md": "sha256:1b71c5ec952e6ad9df54301023e9b8e32c84518d5a12205bdd4fc66548a3310c",
         "assets/templates/CONTRIBUTING.md": "sha256:9f48475bf8e7456260ad386470577f5fba9466df0cdc888bedfb55d6e1188dd5",
         "assets/templates/README.md": "sha256:4055e43b9c0fdacf84a8fddd503968cc0d49e7555a642979ae81292fb65a47f1",
@@ -604,13 +832,13 @@
     "golang-error-handling": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-error-handling",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.827725+08:00",
+      "installed_at": "2026-07-12T17:53:22.903881+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-error-handling",
-      "version": "a5e0e59",
-      "tree_hash": "b76acf3a44541f7808738db6e509ee9f13af8c05",
+      "version": "4881c01",
+      "tree_hash": "711d446cf0f3ca649378cc4871252690f9983c09",
       "file_hashes": {
-        "SKILL.md": "sha256:7abe176a068f2df4b19a9e265995186a792c69d494f5746978763e840983ded8",
+        "SKILL.md": "sha256:cc7290a8a7dc1e4503bed82dd765fae1a92029a19627ab68d377c4c3474d2173",
         "evals/evals.json": "sha256:8b1618ab374c01a876f8cb6bcd5fa4a641f371f14aa18de991e06bd405e23cf1",
         "references/error-creation.md": "sha256:8a0ae8c77dfe247985113d26714f008b54d30a004ea22d90abd6111dcb7ae228",
         "references/error-handling.md": "sha256:970195b39ba9328e07763e8b01a9470bb5120e3c2c1230262d85ef187f2ae79a",
@@ -620,13 +848,13 @@
     "golang-google-wire": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-google-wire",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.879023+08:00",
+      "installed_at": "2026-07-12T17:53:25.354022+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-google-wire",
-      "version": "a5e0e59",
-      "tree_hash": "410d14200769e5c9ee22dea482d1ef1fe00aea0e",
+      "version": "4881c01",
+      "tree_hash": "12d1089dc690b87643a45a20b1040cef64a7d8a2",
       "file_hashes": {
-        "SKILL.md": "sha256:aff5af3ee5778e61525703d2b3e8ca339fe53b5a049157cbd8571b74f2b72dd4",
+        "SKILL.md": "sha256:1f7b68be7d88a47f299fcbad36cd07e8f3e24d0d8f5633f128590eb958baa675",
         "evals/evals.json": "sha256:57150d1664069361c442c933a51d8d373ea839e11489f6c8ab33645a55a80563",
         "references/advanced.md": "sha256:02b96f9331346abcc5a265840633c09ea6a52ed8f58f6f9d856f38305e21c10d",
         "references/recipes.md": "sha256:1544caa1c29c4d272c3630846666a2df54db37547746f4be23cc3a3c83e6bfba",
@@ -636,13 +864,13 @@
     "golang-graphql": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-graphql",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:18.947399+08:00",
+      "installed_at": "2026-07-12T17:53:27.734608+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-graphql",
-      "version": "a5e0e59",
-      "tree_hash": "deafffe03ffb023479928d8e6b87c1c39bca3758",
+      "version": "4881c01",
+      "tree_hash": "3d0911cf3e8afaf151ede88eb3edea77246d6123",
       "file_hashes": {
-        "SKILL.md": "sha256:f12e73749858ee085656d50bb35168ad5d98c736bf29a583702a7ca8d6ca903d",
+        "SKILL.md": "sha256:40fdef4a53c5c57f14752f831a01b6782b1a322992904b2cf37f25af22196023",
         "evals/evals.json": "sha256:965bd5c7d32338e249442254c21290e463e23d727b706e15d8101df6c8937843",
         "references/gqlgen.md": "sha256:c40ec34fe285ab84d3e9b9f1800d0263ae3effda7d13760b03caa1d6b6827453",
         "references/graphql-go.md": "sha256:0eebb3bf1eaaebd76f8d045a643787e7bc981a56d8eb1986bbf982024ce09a73",
@@ -652,13 +880,13 @@
     "golang-grpc": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-grpc",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.005603+08:00",
+      "installed_at": "2026-07-12T17:53:30.310024+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-grpc",
-      "version": "a5e0e59",
-      "tree_hash": "c5fea24795e5fe16fc0a61a1c3096780fc48d24a",
+      "version": "4881c01",
+      "tree_hash": "594b3388c51cc05d0caa5543d2779541270aabb2",
       "file_hashes": {
-        "SKILL.md": "sha256:c28b516f5a6c381a53b572d5db69693ccb044130370925fcba7e3fd20b723c66",
+        "SKILL.md": "sha256:a080ffbaf5b4d05a0d2ea02c425065489b84bb6640a907116b3b126e2272e7b7",
         "evals/evals.json": "sha256:51d136af9f1962e3f9e9b00d16f2e6221720d0cdbfc0982eff65423827bd6728",
         "references/protoc-reference.md": "sha256:c7178c239dbf04b099069acdcc178e6eaa8619a6bdefd0a93512f073da9c9709",
         "references/testing.md": "sha256:733002ea62741657d426a0956e7c50fd01b7f7f54186309273b4258bdebd0457"
@@ -667,28 +895,28 @@
     "golang-how-to": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-how-to",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.065965+08:00",
+      "installed_at": "2026-07-12T17:53:37.974165+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-how-to",
-      "version": "a5e0e59",
-      "tree_hash": "07c874c8adc2401d323290a85c9732807ef83501",
+      "version": "4881c01",
+      "tree_hash": "16f7923ae981c147c7b2262c4ebd4e5ba758ffb5",
       "file_hashes": {
-        "SKILL.md": "sha256:bfa27d95813ccf33ad40085c830b97b4ee57bc9407769b3e0a9f8803fd08ea19",
-        "references/by-category.md": "sha256:d6cf5431752a133e868b6955a9ba077cbd72d13cf58b37cb07c6af80b26feed7",
-        "references/disambiguation.md": "sha256:246c13277d86898b064ddc4d48d0956f8db9630975c0e8156c797ceb56f8ee28",
+        "SKILL.md": "sha256:dc884107c4501e306a2c537f929e819fc08444f9be046d7e58bc0a2885471841",
+        "references/by-category.md": "sha256:f81aabd5c2ba1e5f39825c4f0acd48e4d075c79f5ac751a508668b383e591842",
+        "references/disambiguation.md": "sha256:92f81618a11a35d944be7b5210b62e0fad756d0f2844fb9cedbe389a014fb7d1",
         "references/project-config.md": "sha256:bd29a2520f4333d21ae69c94c330f9f856736f6ee909f8c6a5650fdeb2f64bc3"
       }
     },
     "golang-lint": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-lint",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.115486+08:00",
+      "installed_at": "2026-07-12T17:53:40.347961+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-lint",
-      "version": "a5e0e59",
-      "tree_hash": "941fc15f291357ed9bc11ac88f34f0bfe473707b",
+      "version": "4881c01",
+      "tree_hash": "0506c6eb4f7e6fa46017147fe008169b593235df",
       "file_hashes": {
-        "SKILL.md": "sha256:bfd49aa022338959ea45d08d3fbf3fce010c236cdd0109a2d6a9859635c3cd72",
+        "SKILL.md": "sha256:72ba8fff5b383ac9fcc3af1b353c1e46e21954ad3d000c9f5993003ae77965bc",
         "assets/.golangci.yml": "sha256:10192b1981786afd21ea39553eb6639a21d6f903d32150355e7bc559828be2e5",
         "evals/evals.json": "sha256:b075c4894cb663b067b5cfeaf5525ed49af1dffda24b36c458d09c2f40ffb90a",
         "references/linter-reference.md": "sha256:4cb71293e151f68179b88d7707de71fe1a1a489e3ad107d861b46118e62ec869",
@@ -698,13 +926,13 @@
     "golang-modernize": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-modernize",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.165379+08:00",
+      "installed_at": "2026-07-12T17:53:43.770284+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-modernize",
-      "version": "a5e0e59",
-      "tree_hash": "63897470d90d350af7581fbe0c041427669e64ba",
+      "version": "4881c01",
+      "tree_hash": "01c23bea926c8a391507cb9404ab57450cfe8d67",
       "file_hashes": {
-        "SKILL.md": "sha256:baf5ecd8180e71809e870876cd43ac108e7726706e6ebc263e543b644f84b828",
+        "SKILL.md": "sha256:1a38d3f67cf04c29b520507980a803a5863568bd33647772994b3107c2bd9527",
         "evals/evals.json": "sha256:5821a7b2064e264d00eef4e9aad163fffe60727ef25845575b01e29777f2953c",
         "references/tooling.md": "sha256:47ab9fd9a537b1222b7db7eff1e868cec8b90c4d8ec75f483d6eff5a213c0407",
         "references/versions.md": "sha256:626acb58a35693f6fb9439aecc13bbba8f9407035721d7c9bbb37c697a4b9f16"
@@ -713,13 +941,13 @@
     "golang-naming": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-naming",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.212763+08:00",
+      "installed_at": "2026-07-12T17:53:46.43738+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-naming",
-      "version": "a5e0e59",
-      "tree_hash": "37439eb1b1625b2cc833fefd6d3ebd6edb916712",
+      "version": "4881c01",
+      "tree_hash": "e37421d502424b5dacea031dd0910e31fea0baa0",
       "file_hashes": {
-        "SKILL.md": "sha256:a54d4bc4277bc361e56c64107e5e7e827751304dcfebab89e99b62a519134b89",
+        "SKILL.md": "sha256:5e09d2d07510c6fe3d69d9c7c799b3a58682d78db5b166a4c2f78b033ad98b8a",
         "evals/evals.json": "sha256:450298ba90598fcaaff513e057c0de7c1a61ab2f1c8125f1ac26129860b4829c",
         "references/functions-methods.md": "sha256:af0d08af3cda6df1c84e48660f21d1f5a42b5b776335493c0c04c8869c2c5931",
         "references/identifiers.md": "sha256:7a79b7db17805ad0b90ecada0ee5c0b5ccd75b3e0ff8146559a8c7ddde2fe9bf",
@@ -731,13 +959,13 @@
     "golang-observability": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-observability",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.262287+08:00",
+      "installed_at": "2026-07-12T17:53:49.823073+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-observability",
-      "version": "a5e0e59",
-      "tree_hash": "71ebaaedd547cd41788183315e226b5f2716e330",
+      "version": "4881c01",
+      "tree_hash": "94e4fe96a8d02b034f07ae1913ef5d0205903f83",
       "file_hashes": {
-        "SKILL.md": "sha256:df700dfead33d52da620816e2bfbb6f4d5002f1c88d3845868a192a2119d561b",
+        "SKILL.md": "sha256:0881725965a732cdfbfaab7094584ce8b884cbf45bf1c4c8e6507562ed8d4e5f",
         "evals/evals.json": "sha256:53fbb12e680eefb353b8c24087a16f4f437740e2b3e94cd2c517372025e6dc3e",
         "references/alerting.md": "sha256:607142b5b7339dc10a7f1f6b953ac2589321aa357d4ab9430faf034714b5af76",
         "references/dashboards.md": "sha256:fac3c553d5b824db3c9a1f569a514248d556cffeebe22a61609090808eaa79f1",
@@ -751,13 +979,13 @@
     "golang-performance": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-performance",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.313919+08:00",
+      "installed_at": "2026-07-12T17:53:57.497299+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-performance",
-      "version": "a5e0e59",
-      "tree_hash": "3b806c7f67f2c369ca41bad154efe0d41171713a",
+      "version": "4881c01",
+      "tree_hash": "fc1089fb443467ee9fa224d12742efc991226533",
       "file_hashes": {
-        "SKILL.md": "sha256:cfd50ca2ec6619aeb26ee02e26338f00bf55810926392f031f469e2681b9b583",
+        "SKILL.md": "sha256:a9afe67a13253374939db368eb4e6e2ca9478dfcc6071347c5fce8339090c7f8",
         "assets/prometheus-alerts.yml": "sha256:778e10629d29d25acceac196bbf58a88a6939ff6b5366752da9327a4aaa78637",
         "evals/evals.json": "sha256:72ed06f9e29d4d3b84d8d368ccc69433fd7879d40b4a62201e0e9f804cef5793",
         "references/caching.md": "sha256:4f1439f1fbbd74c38ab00490bf90505a9984748800162d2909caa51c482a2b92",
@@ -771,13 +999,13 @@
     "golang-popular-libraries": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-popular-libraries",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.365072+08:00",
+      "installed_at": "2026-07-12T17:54:05.458984+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-popular-libraries",
-      "version": "a5e0e59",
-      "tree_hash": "838fbbc2adaf0424f87b74f6291043a4fcd948a0",
+      "version": "4881c01",
+      "tree_hash": "41668132dd83625196df17232657eb82c81abc83",
       "file_hashes": {
-        "SKILL.md": "sha256:af0716180dbba0b2e52a61471e5b306a0a6fa9c403b91a598911ab27c75210cb",
+        "SKILL.md": "sha256:48e8625608a8946c79c02adc5070505609b1ecd5b39597d7cd090eb7b83dc0a4",
         "evals/evals.json": "sha256:9d417e2e9a55e5e8dbdead8ce2f0baaa70c2fa21d4837c0aa4e6588cafb60b99",
         "references/libraries.md": "sha256:e1f09337dc71d41cd3ac78a275df2187ffd0bd5728d8649077f07874fa3ac05a",
         "references/stdlib.md": "sha256:7ed0b8de3aec7d0ef1f2deaf328f5d2624129fcb3f19c55f52693e929ca27d7e",
@@ -787,13 +1015,13 @@
     "golang-project-layout": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-project-layout",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.415829+08:00",
+      "installed_at": "2026-07-12T17:54:08.129224+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-project-layout",
-      "version": "a5e0e59",
-      "tree_hash": "1d7018042ba02c81dfe02be2fa63e1b268b4c834",
+      "version": "4881c01",
+      "tree_hash": "7e9959809dd1c33977f480a7bd3b26c02e5a24fe",
       "file_hashes": {
-        "SKILL.md": "sha256:6572b1c5eb2290d7f4c9d5438a3b8161cca82a89cb9214e34f11103509e34c75",
+        "SKILL.md": "sha256:886c06cddd96daf412ab00dff302d7899f588ebcee639b1a4e23263dead01572",
         "assets/.gitignore": "sha256:e4c2672f86a9d58a16813d8e81db033ed7d29c9b89493c4f6b9b137f686cb78a",
         "assets/Makefile": "sha256:27d41a1b5f8b7ff5451f5dfca7e934185df5754f834d86d8b5dec7ce08e0f9ea",
         "evals/evals.json": "sha256:d27071f04918e4e7808e72117c6ffb3d9e130e257273ecdd52f5d4080d043752",
@@ -806,10 +1034,10 @@
     "golang-safety": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-safety",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.469467+08:00",
+      "installed_at": "2026-07-12T17:54:11.169356+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-safety",
-      "version": "a5e0e59",
+      "version": "4881c01",
       "tree_hash": "814c3b09b5c8975dbd8e00ccf4394376ebbe8359",
       "file_hashes": {
         "SKILL.md": "sha256:738d483e978ba902152c9ed0538a91aff7c36a662fd986834e63d68e4a04caf4",
@@ -821,13 +1049,13 @@
     "golang-samber-do": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-do",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.526298+08:00",
+      "installed_at": "2026-07-12T17:54:13.514677+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-do",
-      "version": "a5e0e59",
-      "tree_hash": "f5f3d3b82fd2c2438b02d59a147bda3cf4fb2c24",
+      "version": "4881c01",
+      "tree_hash": "35ce190e9ea4d21a30ec94bdd09d773656ae3cb6",
       "file_hashes": {
-        "SKILL.md": "sha256:d870fb6e2da18ff59037cc69bc7be02259e354f6c5909b7168c0d7b898bae178",
+        "SKILL.md": "sha256:f2a322711fa978c519faa41dcf0d7c0f9f9f42a7f1c9881023ff05a5f362a5a1",
         "evals/evals.json": "sha256:0c93ac8caf98425421a75f1a4aa9e3df0d9e3b2a4ddcb7d7549b5f74267ff5e4",
         "references/advanced.md": "sha256:e5f31ea47c65fbf8976a56a81a6cbb3ead85a031f692e640e736466c1f9c8d41",
         "references/testing.md": "sha256:84984c7ad4ffabf97e336b4eac5c6ab48a790e03ab559743b84c621c8212b250"
@@ -836,13 +1064,13 @@
     "golang-samber-hot": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-hot",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.58883+08:00",
+      "installed_at": "2026-07-12T17:54:16.440478+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-hot",
-      "version": "a5e0e59",
-      "tree_hash": "5c9a59efbac5dace3cf824eeb7a2c2c837d9a290",
+      "version": "4881c01",
+      "tree_hash": "175c266e4312326bf6c9b7c03e1ffba2aa4d1c6c",
       "file_hashes": {
-        "SKILL.md": "sha256:76e10be2c73245f59269e2f9997d1538550c23b9f1b693afe58c11bc005b1f3c",
+        "SKILL.md": "sha256:26d72e712f4557c6a627616d78190b06c0944f6f51a70c11708a60a430f0b4da",
         "evals/evals.json": "sha256:9835adf20c32939d5a58d2384e3e5a0578e3ae458927c9396b81664528d09d84",
         "references/algorithm-guide.md": "sha256:3474be5a3c37fd7c2491c83940a954da0e88f7c4f48c1d505414f280904e3007",
         "references/api-reference.md": "sha256:47fe6e218603037f364986cf2e890f145f21ac803496ed29a28ea254a1549745",
@@ -852,29 +1080,29 @@
     "golang-samber-lo": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-lo",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.643196+08:00",
+      "installed_at": "2026-07-12T17:54:19.542596+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-lo",
-      "version": "a5e0e59",
-      "tree_hash": "3b93fcccf5ba3df88d5c077fc33ed9cd426b5f13",
+      "version": "4881c01",
+      "tree_hash": "5bee7f855a1435d7688d8d5941e31f8ee693d7c0",
       "file_hashes": {
-        "SKILL.md": "sha256:7c5dc9ac2f514953502ada2a4652344159f91843928320291108469c76618f0c",
+        "SKILL.md": "sha256:2b08e4879ac003a8ce51abf785637ffa9e7a6aeb8405ff52a4c2aa08f0152874",
         "evals/evals.json": "sha256:925a11785964ee0ee8031bb0670cb5bc2ede3f3652efb0c040e5df003bec499c",
         "references/advanced-patterns.md": "sha256:fea3430b71c2acdbc3927e2d58b6f139d5f75eb0117991f1ab8423efef787238",
-        "references/api-reference.md": "sha256:f66b7fb722249b45d29b5e5046a9eb6d4054558068a362d168588ea7da2aaeb8",
+        "references/api-reference.md": "sha256:7b50d9914155d25af42a57d03fa3c813cf0e2a24acbfb6867b66e21089e40144",
         "references/package-guide.md": "sha256:98450f604f1527134cd5649ffc1331661931de30060bb2675a95cbd935967a64"
       }
     },
     "golang-samber-mo": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-mo",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.695887+08:00",
+      "installed_at": "2026-07-12T17:54:23.703047+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-mo",
-      "version": "a5e0e59",
-      "tree_hash": "b0b073ee60c7e0ace140a6612ef905a796bac72c",
+      "version": "4881c01",
+      "tree_hash": "ff04763a09299e67d56c2b12faeb35779716e14e",
       "file_hashes": {
-        "SKILL.md": "sha256:6ab54d2d9ab0b631f3c0735ac456dad7b79ffa578a6e1ee1948d1fb63aa98dc7",
+        "SKILL.md": "sha256:068cbe688c0443de1650619fe90b3680df8165c0a3534db446498b420cd3ea28",
         "evals/evals.json": "sha256:905353a189d36b4fb5aa045c03ba4a147e2bd23c5e97203324af688e615823b7",
         "references/advanced-types.md": "sha256:f7a5041519c66683ecf975f01ee8c7f6f77c7f10ca04edbba5b0b6840719b04f",
         "references/either.md": "sha256:9d0f62f4ef0dc02af884aeb0d9aaee624d567c9d1b0160ae8adb7ace91cc9226",
@@ -887,13 +1115,13 @@
     "golang-samber-oops": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-oops",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.74771+08:00",
+      "installed_at": "2026-07-12T17:54:29.330391+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-oops",
-      "version": "a5e0e59",
-      "tree_hash": "d4e0d9f5a0b9f881743a5fbb584318d2ff24e57e",
+      "version": "4881c01",
+      "tree_hash": "e2748d6053d83b5828b0871268d68072f000b301",
       "file_hashes": {
-        "SKILL.md": "sha256:c9ee08ad08ce80b8ee96ec70312a018d94bb6bc733f93b36db4e9f887bf56c9e",
+        "SKILL.md": "sha256:ec811c0f1931f2090bec0982a44c25b0116f08b00ba7f3683b28246a5a2baf55",
         "evals/evals.json": "sha256:02dd0b2e6948b4cfc07e70f6cda8b93c8e4adcc7983dec8be4b6689520931e62",
         "references/advanced.md": "sha256:d7e588ad5a294b76a06bb16223fe7a9dec5acf3ffdff6d2eaf4bab801ea42a0d"
       }
@@ -901,13 +1129,13 @@
     "golang-samber-ro": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-ro",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.799481+08:00",
+      "installed_at": "2026-07-12T17:54:32.544644+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-ro",
-      "version": "a5e0e59",
-      "tree_hash": "d0bd93000a8691415c5393acf234fc44f0faca75",
+      "version": "4881c01",
+      "tree_hash": "d7bc31df19966fa615b6b991c34c963aba5f0f48",
       "file_hashes": {
-        "SKILL.md": "sha256:fb0cb026ef4b400055aaebf3ea0811fd94c5ad16b2af206b2110091b8755fabb",
+        "SKILL.md": "sha256:bd1d1f237654d697957ef95136fcb697d1e9b296df72163ed499d2a9cfae850a",
         "evals/evals.json": "sha256:72f84fd877c9a0ab3ec985381ee87fda2c5dbfc843835d85fe2b642a54e35f25",
         "references/operators-guide.md": "sha256:830b1f562c78f416e07fecb79cb4e9b64fdd1c5405fa0d8f95e1b392639c4044",
         "references/patterns.md": "sha256:397bf0194fa5309a2af421eba155431fd70da97e7dee3f3d6d1a49282b885e67",
@@ -918,13 +1146,13 @@
     "golang-samber-slog": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-samber-slog",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.851277+08:00",
+      "installed_at": "2026-07-12T17:54:35.090914+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-samber-slog",
-      "version": "a5e0e59",
-      "tree_hash": "96b6bb88a9e8659659fdd685b83fb7e4c5f5db44",
+      "version": "4881c01",
+      "tree_hash": "200b1d336d8112a8d85858928985d17a3affd3cd",
       "file_hashes": {
-        "SKILL.md": "sha256:d97d32962f1628c35293ebc259718991737470373af1c7c096ae4ade494242ff",
+        "SKILL.md": "sha256:f3c877f162739907ead2884c6cab520efd6fa9e5c5328d28df014ed9b4493587",
         "evals/evals.json": "sha256:e6c745fe905b0664a96369f2484ffa662104c11a5ec4d71bf5ab4743bdb02759",
         "references/backend-handlers.md": "sha256:5305b5e33b68352484c63299f72680863fc8d6e269d6167ed6c969c513c80818",
         "references/http-middlewares.md": "sha256:3105c435fe4e8f1c00458db56d646590eb4a0a2836e6608112fd4ef1e3d4e5f3",
@@ -935,13 +1163,12 @@
     "golang-security": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-security",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.90592+08:00",
+      "installed_at": "2026-07-12T17:54:55.238163+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-security",
-      "version": "a5e0e59",
-      "tree_hash": "dff8e2f674b9a6de52016ca060affad27658b844",
+      "version": "4881c01",
       "file_hashes": {
-        "SKILL.md": "sha256:70a000f0302379631d4a15a055d67943f71084aaccc17a7d09b9c44dda9b3398",
+        "SKILL.md": "sha256:754379c7d83ef62b178b6ceeee77e6e72c73b8eb2a83df4ab9289b3bae693897",
         "evals/evals.json": "sha256:88d584c25e5c8b9548ceac5e68d12f270a31dd9f9752554bfc9ed382eaee879f",
         "references/architecture.md": "sha256:2f7f5615683e28a1e54e4953d2f1725b63853b2e5b97ed76281409c4b2d50a81",
         "references/checklist.md": "sha256:4c73996ad4c4e70756f1319c261e01d10977d26c0050ebbee6e19ca513ed1fdb",
@@ -960,13 +1187,13 @@
     "golang-spf13-cobra": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-spf13-cobra",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:19.959884+08:00",
+      "installed_at": "2026-07-12T17:54:57.618258+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-spf13-cobra",
-      "version": "a5e0e59",
-      "tree_hash": "f103e49bceabe3b8ed8425ec3f217c88af666f07",
+      "version": "4881c01",
+      "tree_hash": "3812f0861701fa1010c396d61688d5aab395a8d8",
       "file_hashes": {
-        "SKILL.md": "sha256:4e436937c60ab22ccc48736dae91526ea2a4bcfd7c9aef32401e08d09cfe62c4",
+        "SKILL.md": "sha256:37d60a2ced1352e8342c5773059a96f02e4c788405dafb6c1c665da3b501b854",
         "evals/evals.json": "sha256:6ba662758249b83bcfc9f66adfaa780651c7913400aef51839b2f0afaf00b38c",
         "references/commands-and-args.md": "sha256:30ff6d61b9ba030799a6dc089a2f1404675e10115f6eb2626c5599875f30025b",
         "references/completions.md": "sha256:3f6122cd6ee9c1527ceac0ce42f427e9af0f4de39b840923dd5cd16cb064ae07",
@@ -978,13 +1205,13 @@
     "golang-spf13-viper": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-spf13-viper",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.014954+08:00",
+      "installed_at": "2026-07-12T17:55:05.33776+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-spf13-viper",
-      "version": "a5e0e59",
-      "tree_hash": "35a3133a022e508a944e43847871fca8c0fec032",
+      "version": "4881c01",
+      "tree_hash": "1e2c74e7bbf88bb762007712f7d974922f9c3f2e",
       "file_hashes": {
-        "SKILL.md": "sha256:ec749de1f9179d8e0faafcbae36fbeb780236c0f5d6c37d9d34603ec444eb262",
+        "SKILL.md": "sha256:00f358a3555629426e38d818c1dec870f84a1721ebc0b1a5582f2e0b9ca4670d",
         "evals/evals.json": "sha256:532025535b51320907aa2283dd67075fb26ddf4086b3fbeb5a4e467df5747938",
         "references/binding-and-env.md": "sha256:be2220b47b266f02e660737d6e6d98da8fe4aa230f2fc4562143ec16d6d8ecd1",
         "references/sources-and-formats.md": "sha256:049ad6645c2fecf5a73162d7b83f7b4cfafe30e7ad336ee0615725df26481472",
@@ -996,26 +1223,26 @@
     "golang-stay-updated": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-stay-updated",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.068067+08:00",
+      "installed_at": "2026-07-12T17:55:07.744391+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-stay-updated",
-      "version": "a5e0e59",
-      "tree_hash": "8f9584ee840cf2a83293d0dd7c332b7413b9f2f9",
+      "version": "4881c01",
+      "tree_hash": "d3bf179f977f67b517399cd32d755c08cf034b00",
       "file_hashes": {
-        "SKILL.md": "sha256:25b8bf6f6150f3ddab21b53d1111a9dcac058451c1a090b4d7560063c51260bc",
+        "SKILL.md": "sha256:dd6011c213b53055d8319418d607f8b2cbc6f265fa8a388363a8517ebab15554",
         "evals/evals.json": "sha256:82cb3b25893eae33b70383e8c8faf71a5654cdfaa5b0bf52d661bbdd0cbc0c52"
       }
     },
     "golang-stretchr-testify": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-stretchr-testify",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.119974+08:00",
+      "installed_at": "2026-07-12T17:55:10.502368+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-stretchr-testify",
-      "version": "a5e0e59",
-      "tree_hash": "9cbe8d2cacfe31550f7cd3c2214bdbc7a3bc6c60",
+      "version": "4881c01",
+      "tree_hash": "0191c956e3f0e62fd16af585ee553b818e6b2191",
       "file_hashes": {
-        "SKILL.md": "sha256:9b90e5c1bae40dfc76ff32032f4bf7589d79288171468131c90fe7c37c0315a8",
+        "SKILL.md": "sha256:d2e4870bf9e85a73d58d2b4573f9d7aecc7ef03826093b410be77f1d211bb925",
         "evals/evals.json": "sha256:eea26cc911271559fdd0e2f518335a66d38134bac8e69e8e60028699189f912d",
         "references/mock.md": "sha256:8082a5ace0d7872fc76c51c23aa8205bf18a51b0ca2530ebec21d5dd896f42db"
       }
@@ -1023,26 +1250,26 @@
     "golang-structs-interfaces": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-structs-interfaces",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.176152+08:00",
+      "installed_at": "2026-07-12T17:55:13.764019+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-structs-interfaces",
-      "version": "a5e0e59",
-      "tree_hash": "03125b1d98c4bb0d97726b2609a843df3d8840dd",
+      "version": "4881c01",
+      "tree_hash": "68d5f2863d756e53fa7e0a0fd30c5f5b2081eee2",
       "file_hashes": {
-        "SKILL.md": "sha256:e1e9192aab7b3c05f3e4e6c7fbe00b634dda870932f5862e386d7b472247bf8e",
+        "SKILL.md": "sha256:2c2e90f9a95cb47a414312c11f1933696f5e403c477bc25bc12342712ea8b246",
         "evals/evals.json": "sha256:34958c0025acf30e85256db718638c03c76dedd3070e56e7c81608c946390219"
       }
     },
     "golang-swagger": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-swagger",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.22798+08:00",
+      "installed_at": "2026-07-12T17:55:22.598618+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-swagger",
-      "version": "a5e0e59",
-      "tree_hash": "efa8ebcba268f484b965d26435ab4b11870d4c21",
+      "version": "4881c01",
+      "tree_hash": "1d9f8a760281c8822aacdd8f43364b95b4e631bd",
       "file_hashes": {
-        "SKILL.md": "sha256:214561edd74b3ebee34da0b9619c26971757a332a3d3b3592d524b48e56e2ed3",
+        "SKILL.md": "sha256:797d8ae7e2a6a18c2bca17a26864d38749d1c3fec13ee4544b63385ccc524efb",
         "evals/evals.json": "sha256:f50b02b6fc4d4525b955a290e26a7a936ada921b4ee6004d8287119f3886ba73",
         "references/swag-cli.md": "sha256:3f54711e095f1f93a6a74faca752295d30dc63b68024cc825cfb5b0348af25a2"
       }
@@ -1050,13 +1277,13 @@
     "golang-testing": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-testing",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.278303+08:00",
+      "installed_at": "2026-07-12T17:55:24.98832+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-testing",
-      "version": "a5e0e59",
-      "tree_hash": "17128555939dd3839a972d5f14cfc544b1ad6893",
+      "version": "4881c01",
+      "tree_hash": "2f7863fa6c0337b44d0c89c49e219289951df05f",
       "file_hashes": {
-        "SKILL.md": "sha256:c49ca69d2e297950863d207c6dc036ff5a47a8d32a46dabfec94b9f131afa011",
+        "SKILL.md": "sha256:b7c1c8c72019bdea57fa3d2d9864100c57184fa9ee3771c066fea7affe00e505",
         "evals/evals.json": "sha256:bc083e8d62ff1c23d9cd734f274a5733cfc0d30bb6356e03668dd3c67ff7c92e",
         "references/helpers.md": "sha256:8c71d253a246e66b8249022c96d7e8892f5bfc2156b02a36673c321db2c843f4",
         "references/http-testing.md": "sha256:39381274d7887651b86bde513085835f52860aa0832eb6f945f79c008f240e0f",
@@ -1067,13 +1294,13 @@
     "golang-troubleshooting": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-troubleshooting",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.328815+08:00",
+      "installed_at": "2026-07-12T17:55:28.480241+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-troubleshooting",
-      "version": "a5e0e59",
-      "tree_hash": "202895f6537dcee3c63082564b1b8211b66348fe",
+      "version": "4881c01",
+      "tree_hash": "2fa548467241c1478cd7795ae36b7c1bb692a359",
       "file_hashes": {
-        "SKILL.md": "sha256:d955d27f5f44fc511eb4d3e132b9a09c445848accb130274cc790176d7c834bf",
+        "SKILL.md": "sha256:42b2cdacfe75a6bb0c9c15f8b58f6f70cb0ee87ab18cdb2f73ea3b76acb48c76",
         "evals/evals.json": "sha256:a15b4ce5f5f0d4d2fe0590ba2207e13e2f23bba4e11d1743bd89ddda87146dde",
         "references/code-review-flags.md": "sha256:577b683e055c3880fa7233e24f19cddbd4aa65731be72d50211d873e202bfc43",
         "references/common-go-bugs.md": "sha256:0fc1cb80ed587190b724a21c915de07da96a28e77483838a9bd5b79ab41c7a4e",
@@ -1090,13 +1317,13 @@
     "golang-uber-dig": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-uber-dig",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.380769+08:00",
+      "installed_at": "2026-07-12T17:55:30.838135+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-uber-dig",
-      "version": "a5e0e59",
-      "tree_hash": "00e4428949b75b7de67c468245cb530666e14be5",
+      "version": "4881c01",
+      "tree_hash": "ebe62ff270c90771b6367e6233052cbfda365cb2",
       "file_hashes": {
-        "SKILL.md": "sha256:70b02f93319005ceb54f45a2a2a0256a2052d3ea9b939e25180c13f683fe9d36",
+        "SKILL.md": "sha256:a0b38b70c3aa899f2ae48a9659fe4dc3bbc9a36b76041b2837bdba0442f762a6",
         "evals/evals.json": "sha256:c4ff574e38317bcc0765e7dd10904d15522cb8cb1206ab47fc1b291b0ad2e629",
         "references/advanced.md": "sha256:2dd2c9eed34d2d826d68aad4a2c7cfc62165c1d36e7c266f55d4d01a1f687bfb",
         "references/recipes.md": "sha256:3bb4a4d5caad2b35bc0fd25300939594740a5360b96fd2957f96c78b6db4af19",
@@ -1106,13 +1333,13 @@
     "golang-uber-fx": {
       "source": "https://github.com/samber/cc-skills-golang/skills/golang-uber-fx",
       "type": "github-subdir",
-      "installed_at": "2026-06-13T13:37:20.438004+08:00",
+      "installed_at": "2026-07-12T17:55:33.147054+08:00",
       "repo_url": "https://github.com/samber/cc-skills-golang.git",
       "subdir": "skills/golang-uber-fx",
-      "version": "a5e0e59",
-      "tree_hash": "397eefaef8aec083473ed2a007696473df8d7fe6",
+      "version": "4881c01",
+      "tree_hash": "8a32bce3fba41e4b6a4ef3718c2e1e1d4c3c7069",
       "file_hashes": {
-        "SKILL.md": "sha256:310752bc893f1bb53f87bec610055266054e2045451e5acae21d1f6863a9fdfe",
+        "SKILL.md": "sha256:0f5656b8d874754bdee0bb7f5fd4d5948222eb055d9bf65f11286b98cfacc0b8",
         "evals/evals.json": "sha256:a5e784e74302dc0ce78320f04857a8c1d3e931ebf22ea05d5053c5b1088b63fd",
         "references/advanced.md": "sha256:ff98f3fea0dfed8eb96b4a5ecadb0520373a0ef3c13ee01fc355d47447706678",
         "references/recipes.md": "sha256:4311c2a58f6f9ae03e0c345f8e750fa7a2defa1607c3abba667edb7c56bf0b4e",
@@ -1122,64 +1349,95 @@
     "grill-me": {
       "source": "https://github.com/mattpocock/skills/skills/productivity/grill-me",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.79225+08:00",
+      "installed_at": "2026-07-12T19:44:56.782322+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/productivity/grill-me",
-      "version": "b8be62f",
-      "tree_hash": "2a1ad17028306ebe45f0e49703fa28b9b2e7f499",
+      "version": "391a270",
+      "tree_hash": "8320e7b87f7b208f50ce165b1dd43d1e93c8e801",
       "file_hashes": {
-        "SKILL.md": "sha256:74147eb6010a65957efef2b9e0f0b3ff935c1def7fc117697151b1d0f3610556"
+        "SKILL.md": "sha256:6189dfceb7304a6e5558f75d87e68fa3bc7fcf7ba120e44f21f8a61fe01eba54"
       }
     },
     "grill-with-docs": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/grill-with-docs",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.887009+08:00",
+      "installed_at": "2026-07-12T19:44:55.159807+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/grill-with-docs",
-      "version": "b8be62f",
-      "tree_hash": "2c6aa7079cc705a6e0c319fcf23a0fa39968de29",
+      "version": "391a270",
+      "tree_hash": "21adba95de7d93065d9fec725ddf37f871e01d05",
       "file_hashes": {
-        "ADR-FORMAT.md": "sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
-        "CONTEXT-FORMAT.md": "sha256:886ce0e96fd0f76f4c72c337c049cf4655227c599862ce920a62297e0929beae",
-        "SKILL.md": "sha256:3e35025119ba03efe7983dfdec3c8b96918142e3978512f3c2bf66d428310c7e"
+        "SKILL.md": "sha256:610d091047bcfb9db0f75c057d15538481a721111579fc5ec7f83ad9131a2165"
+      }
+    },
+    "grilling": {
+      "source": "https://github.com/mattpocock/skills/skills/productivity/grilling",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:56.846376+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/productivity/grilling",
+      "version": "391a270",
+      "tree_hash": "0ace40ac10f5c0b1534324e4e109ebfa831fb361",
+      "file_hashes": {
+        "SKILL.md": "sha256:5a35925d03a391bcfa46940868b649b72dba89ec9c19525e785bbb6bd3a7f478"
       }
     },
     "handoff": {
       "source": "https://github.com/mattpocock/skills/skills/productivity/handoff",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.837189+08:00",
+      "installed_at": "2026-07-12T19:44:56.912153+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/productivity/handoff",
-      "version": "b8be62f",
-      "tree_hash": "7bbb60d64c911617cee7f71b2ba9e24364faa14e",
+      "version": "391a270",
+      "tree_hash": "3f7df8e717e41dfd6eacd03d47319a2e01248ffb",
       "file_hashes": {
-        "SKILL.md": "sha256:d215dd8f2a19bf85fdaf67a3cdb5077641f6b4108f229ba79579414793d7b0a3"
+        "SKILL.md": "sha256:57c9f1f392d7352cdc85b1e39ca49eddc70ce1dc278bd9653fb4f23dfc2560fc"
+      }
+    },
+    "implement": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/implement",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.222621+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/implement",
+      "version": "391a270",
+      "tree_hash": "aa65990650368f020166bc28d6c05b5b34592c97",
+      "file_hashes": {
+        "SKILL.md": "sha256:6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3"
       }
     },
     "improve-codebase-architecture": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/improve-codebase-architecture",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.932097+08:00",
+      "installed_at": "2026-07-12T19:44:55.287965+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/improve-codebase-architecture",
-      "version": "b8be62f",
-      "tree_hash": "688c17ec27fe9309d84987716aca37b5ce7f3a88",
+      "version": "391a270",
+      "tree_hash": "e5beae48471adf87c513b5cbcb0ca347467546da",
       "file_hashes": {
-        "DEEPENING.md": "sha256:9577485f4fc32c0267639a9151bb41c8af0f8f6086e4bf8b84d5b236e30604e9",
-        "HTML-REPORT.md": "sha256:8a8bcdbb578066271efe6ff675c831a6a4c4c7fd2081d6b5c9bc2e5fabc741d5",
-        "INTERFACE-DESIGN.md": "sha256:678c3e34f1339015053212b3316bf0b676c70aa251050a0613667d4e755fb35e",
-        "LANGUAGE.md": "sha256:6feca2140439c54a774749e8367f18350899ff69c777144ed2248cd4407949fa",
-        "SKILL.md": "sha256:f00de04c7bb83cfd0ed1f97f3401a83838212c30856912ee44ba406649e6c749"
+        "HTML-REPORT.md": "sha256:0b0936104158abeef7246ff6cbabefa4dc055f17589f2833f2d93001421910a1",
+        "SKILL.md": "sha256:0026900866ed2a542af0559cef11dd7ae707633b75cc6f668c2e7c0a33e35032"
+      }
+    },
+    "loop-me": {
+      "source": "https://github.com/mattpocock/skills/skills/in-progress/loop-me",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.995488+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/in-progress/loop-me",
+      "version": "391a270",
+      "tree_hash": "1cec9deaf4f4ce1b99bd0750f1e34bc1100b1285",
+      "file_hashes": {
+        "SKILL.md": "sha256:2b2c725f8b6e8b8f3f6e6bc2c18f0cf3ab029a270b5ac23132fbebdeb6b443aa"
       }
     },
     "migrate-to-shoehorn": {
       "source": "https://github.com/mattpocock/skills/skills/misc/migrate-to-shoehorn",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.519962+08:00",
+      "installed_at": "2026-07-12T19:44:56.441366+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/misc/migrate-to-shoehorn",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "ad722b79beb1c1fb998678d498ba11760d53714b",
       "file_hashes": {
         "SKILL.md": "sha256:de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72"
@@ -1188,10 +1446,10 @@
     "obsidian-vault": {
       "source": "https://github.com/mattpocock/skills/skills/personal/obsidian-vault",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.701784+08:00",
+      "installed_at": "2026-07-12T19:44:56.719154+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/personal/obsidian-vault",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "1e814d168a215762391895aee58f4de06c8e3b7f",
       "file_hashes": {
         "SKILL.md": "sha256:7bed1d552aa5e9345e493cd62cb13e65c5d829d153c349afdb2cb91c809fa6c4"
@@ -1200,24 +1458,24 @@
     "prototype": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/prototype",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.976923+08:00",
+      "installed_at": "2026-07-12T19:44:55.352039+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/prototype",
-      "version": "b8be62f",
-      "tree_hash": "c91bdc5d02d42ed88a3082a8fa83338895b55bd4",
+      "version": "391a270",
+      "tree_hash": "e50d76191bf197e3d947eb8c780c7009269ba589",
       "file_hashes": {
-        "LOGIC.md": "sha256:da91dc92195c00d5dc33863b8c1a030998025a0f8583ebf2babd770825b7f70c",
-        "SKILL.md": "sha256:a653deb65afa2ee8f45c68f6ef4f593147171b386e994c8cccf89292d9ea9d75",
-        "UI.md": "sha256:d76d565149ee50456c5ddc5e29c27fec8737637874fe5c37d970db085a200b27"
+        "LOGIC.md": "sha256:cf372862bccd3db7f18ea57abd76d6c32e6adf65b9e7f46c73d433e107567a5c",
+        "SKILL.md": "sha256:03074862d4b6e4eaf472aa75146e1d193dd9e3bba0e4303a9b2425562d1d44cc",
+        "UI.md": "sha256:e2ca04434be54acdee2f5df582ef8038fadf582bbcc99be0d2e27737ff8ed096"
       }
     },
     "qa": {
       "source": "https://github.com/mattpocock/skills/skills/deprecated/qa",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.707617+08:00",
+      "installed_at": "2026-07-12T19:44:54.648224+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/deprecated/qa",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "3eed5beeb18e77776349782ed087ee4560fd69c5",
       "file_hashes": {
         "SKILL.md": "sha256:d9727aac6503981bf69bdd8b37e0d85b32b8fbd353a57528c252dac1337ab761"
@@ -1226,34 +1484,46 @@
     "request-refactor-plan": {
       "source": "https://github.com/mattpocock/skills/skills/deprecated/request-refactor-plan",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.75224+08:00",
+      "installed_at": "2026-07-12T19:44:54.711602+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/deprecated/request-refactor-plan",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "b0617c9cf69ac1e73a6b30f78c82ff81372079fd",
       "file_hashes": {
         "SKILL.md": "sha256:d59de4ba6cc1fe2dd267e8b9b5a1fd88e3e739e2130bc9dd78061d2a072830b8"
       }
     },
-    "review": {
-      "source": "https://github.com/mattpocock/skills/skills/in-progress/review",
+    "research": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/research",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.295491+08:00",
+      "installed_at": "2026-07-12T19:44:55.416899+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
-      "subdir": "skills/in-progress/review",
-      "version": "b8be62f",
-      "tree_hash": "756c8dd5c0f097682b45ff10d64ca23087b19159",
+      "subdir": "skills/engineering/research",
+      "version": "391a270",
+      "tree_hash": "06c848c1a1f3ae7afd88f040f73a8f3efee3494d",
       "file_hashes": {
-        "SKILL.md": "sha256:5700f30d3f06706ee56c099adceec222fef26dbcf82817ff604962634e246b2e"
+        "SKILL.md": "sha256:af378829f015775a3bcd65ff466826722e99359017ae6bae227ca4c9bd14049c"
+      }
+    },
+    "resolving-merge-conflicts": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/resolving-merge-conflicts",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.482366+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/resolving-merge-conflicts",
+      "version": "391a270",
+      "tree_hash": "b601c90446f887a94ec68e5c2301a8919f949a2c",
+      "file_hashes": {
+        "SKILL.md": "sha256:c7c9ba81362a786aac05d2223123bf1bd2f8a99c3243a72882ede9c68bedfb24"
       }
     },
     "scaffold-exercises": {
       "source": "https://github.com/mattpocock/skills/skills/misc/scaffold-exercises",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.565525+08:00",
+      "installed_at": "2026-07-12T19:44:56.505901+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/misc/scaffold-exercises",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "ef19ca90ec6645b23dc7e68601552ab795e3e6ee",
       "file_hashes": {
         "SKILL.md": "sha256:75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9"
@@ -1262,51 +1532,63 @@
     "setup-matt-pocock-skills": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/setup-matt-pocock-skills",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.022776+08:00",
+      "installed_at": "2026-07-12T19:44:55.545411+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/setup-matt-pocock-skills",
-      "version": "b8be62f",
-      "tree_hash": "77638955bebe492948244f1338e54ca1a9445c29",
+      "version": "391a270",
+      "tree_hash": "ed1bbe6a06bb049aaa95bfe2c487bdb7a8300838",
       "file_hashes": {
-        "SKILL.md": "sha256:c778d4e3d86ecc9125c357279a86780657b5db23110e1f7acf4f46d2441e7204",
-        "domain.md": "sha256:a8cc3d1c11c9cdea455f39c4090cf61ac273f2474dd6f229ab0c2b9b1deec759",
-        "issue-tracker-github.md": "sha256:f0e138631d1fc8aedc9e05d25bc688b97679f81eae7a7c760dd35e0790568370",
-        "issue-tracker-gitlab.md": "sha256:94c574647c4755f2a807742f5e78e7cef586c100266d54501d0e55445c1b1807",
-        "issue-tracker-local.md": "sha256:9a052f4599525e581721ec24cb2ae3e0296b79053e39f684b540d34d3a4f6528",
+        "SKILL.md": "sha256:def265a8b15ffb8afc3f335d69e175ba9a7fe3991218984b0e49e8345cde3b20",
+        "domain.md": "sha256:25be404b58798b3cb2d51c93dba2ab052fc3a425632185726ac3f5fcff193b99",
+        "issue-tracker-github.md": "sha256:52e9f9f1ec0f6d47c6785ac500708ac0521f34abb4cc5475b5dc747165dab17e",
+        "issue-tracker-gitlab.md": "sha256:4470f2f64d015fba01af877233296b401bb0d44b5acb9572ffc3ff6b30e8de88",
+        "issue-tracker-local.md": "sha256:ed6add9fe3cdcd2d1ebb2a463cf0eb6a1a86df500f4922b31a1ab50f15b3a705",
         "triage-labels.md": "sha256:4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d"
       }
     },
     "setup-pre-commit": {
       "source": "https://github.com/mattpocock/skills/skills/misc/setup-pre-commit",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.61097+08:00",
+      "installed_at": "2026-07-12T19:44:56.569118+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/misc/setup-pre-commit",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "5e6e9301b4826bd820401ea4114a797adb169f47",
       "file_hashes": {
         "SKILL.md": "sha256:872f4037cb7e6e0e340d4175c086550072959925dffc87b160d1a30dc9f63bbd"
       }
     },
+    "setup-ts-deep-modules": {
+      "source": "https://github.com/mattpocock/skills/skills/in-progress/setup-ts-deep-modules",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:56.059894+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/in-progress/setup-ts-deep-modules",
+      "version": "391a270",
+      "tree_hash": "a19249df81349f207e3c17da0fa54fea9866b891",
+      "file_hashes": {
+        "SKILL.md": "sha256:2c6e39ccdd77f85337c13a4877c222d47dcd26e31619157af9688798244192d5",
+        "dependency-cruiser.config.cjs": "sha256:f5aaa09edcdfdab39970bd94cb6d1d711bf3f175f5e2c21a268c542cbd95eae9"
+      }
+    },
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-06-27T20:32:57.181591+08:00",
+      "installed_at": "2026-08-06T10:06:02.868944+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "dd7f14c",
-      "tree_hash": "aefeaaaf79e8b92e66cf3baf1f891177533b098e",
+      "version": "04aea45",
       "file_hashes": {
-        "SKILL.md": "sha256:22a2ee8dfed03a66ceb0341b5a178f3eeb8ea3cb27424347298821cb07b0d1a6",
+        "SKILL.md": "sha256:ff0154680677ffbfde730c40332976b7db521d857abb70d0c011cd01e9faa47f",
         "references/TROUBLESHOOTING.md": "sha256:14855dbd2f20ad7042941959f257c79f768d103e89e55d74d8c3b3d38f9ff5ee",
         "references/audit.md": "sha256:85a31c32f17f39ce2baa5189a8004c6adec506e5fcf7d20378caa103b015fd5d",
-        "references/backup.md": "sha256:96e2e8d5e2d7cfb8765c2eebb4e6d733b79258de8b3d974fca8972557f7326a6",
+        "references/backup.md": "sha256:0d85d481fcb0f7ca88c31d1ca56d393a9ae18b8ac4f6c050edd62840cbd45257",
         "references/extras.md": "sha256:c133ccb6a2da342fbf05919c27855cb1de124042f8654396e50ee82a2b7e40e1",
         "references/init.md": "sha256:41d99a2a49f576e1a2354312856ccf730f8d19d4c8d35c592585d40bc2d14d82",
-        "references/install.md": "sha256:2b444bfcd211fae59421631ecd49331b4de287c311354f8ed3ca19f204d223db",
+        "references/install.md": "sha256:e59b9b1169fb72f063249f56b5fc7dee46bd3f9b9d2fe6d7d73b3319e14ff165",
         "references/log.md": "sha256:406e85525f53f4deaa0f48bf8b3b53db3e032b99f5a0e926c84542d51b3a3625",
-        "references/status.md": "sha256:0143c8250ecbedfa14607b82cbfb23107294b6c1e053b5726629556b7a47412c",
-        "references/sync.md": "sha256:75577dce829fda6050b3b761915b70d9aef0d6bdb3c010d2fef7b7b22e226a8e",
+        "references/status.md": "sha256:bbc4d801d9583ce79b848f861b07382157c8fb407e89e31358b0bf6acd34334f",
+        "references/sync.md": "sha256:00877a4a9c1ca0c02a8601aad694cadce61c3facbe57603d36c0ef937028f658",
         "references/targets.md": "sha256:130b0b07b17a88d4bc09af0262a6b161421946f5442295dc5bc828f95226763e",
         "references/trash.md": "sha256:fb94aa6b71d469fa8f6b5e728fcab531b6eb010a2092389b02eaaadf3ebc98cf",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
@@ -1315,128 +1597,179 @@
     "tdd": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/tdd",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.068122+08:00",
+      "installed_at": "2026-07-12T19:44:55.609389+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/tdd",
-      "version": "b8be62f",
-      "tree_hash": "75beb3030b4c979205dd771ff85ac600baeb68f4",
+      "version": "391a270",
+      "tree_hash": "57e1bee887816ed2af745e5fd388f224f6e61ada",
       "file_hashes": {
-        "SKILL.md": "sha256:af059705061156fd4845ddbb736fe92b564118ac5f03551e09ef9e8f6d970638",
-        "deep-modules.md": "sha256:f2123700bf953db1740625686c75bdd145efd486357c47c6818c869fee657a32",
-        "interface-design.md": "sha256:764c5ff0e3fa6b4ab7095eb65ccc7201e090baf19fa16051dfdb72c06d27417d",
+        "SKILL.md": "sha256:5363bb2775679fe9311fbb67947f95359169c6e7f1fac77c0f25e190bca6cf2f",
         "mocking.md": "sha256:3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
-        "refactoring.md": "sha256:54fced22dd1911b7094c3fe7979b7c1a40d40be307482c4adf7dc0588f27d6cc",
-        "tests.md": "sha256:e12182f5c4c6a844b7c6ab4b8d2623b642aaaae5460fe58ed087efd4f3d5fb8a"
+        "tests.md": "sha256:859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+      }
+    },
+    "teach": {
+      "source": "https://github.com/mattpocock/skills/skills/productivity/teach",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:56.977457+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/productivity/teach",
+      "version": "391a270",
+      "tree_hash": "3b6a4245e2aaeacb308ba6175ab3e7f2e43b0c47",
+      "file_hashes": {
+        "GLOSSARY-FORMAT.md": "sha256:d177def491519d97873291f2e860d8f1d60ead78feecb82eee022177958069c6",
+        "LEARNING-RECORD-FORMAT.md": "sha256:855f81017625256584bbf62bd5edb9b0c86605c4cc1139c56acc36b802595d17",
+        "MISSION-FORMAT.md": "sha256:8da6d3ac84eb2eb19f17c260b6acf01c560d3ac7a4501c415eea0e985602f4d7",
+        "RESOURCES-FORMAT.md": "sha256:2bc634a64b0d0daa10904f9222e7aa0d361420dfacabbf092fbe3a72222edc08",
+        "SKILL.md": "sha256:6d2dbe5e03084cf26fef66b535127b36cd1bcbe9478e26b0626029cd51dc2259"
       }
     },
     "to-issues": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/to-issues",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.114048+08:00",
+      "installed_at": "2026-07-04T21:40:26.451603+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/to-issues",
-      "version": "b8be62f",
-      "tree_hash": "b38c5aa6ae5d6903e60d3f74a7aafd32d02f2c06",
+      "version": "272f99b",
+      "tree_hash": "8d7393a4127ee678f4b99070f436a2a87014c6e7",
       "file_hashes": {
-        "SKILL.md": "sha256:0e6a2973fa5bdf32570227c578f7e474d945dd9281615d31439664c3ef016fce"
+        "SKILL.md": "sha256:f8a72a5bc88aa830ae62b323a52b08934da52851b010984c55829a644c7f6ba6"
       }
     },
     "to-prd": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/to-prd",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.158666+08:00",
+      "installed_at": "2026-07-04T21:40:31.632855+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/to-prd",
-      "version": "b8be62f",
-      "tree_hash": "d6eff3e99a325d2d9c2acbe31b4d76fa5340a154",
+      "version": "272f99b",
+      "tree_hash": "d74909eec8906ceb3341a9b30e2e51cdf62a67c7",
       "file_hashes": {
-        "SKILL.md": "sha256:b60e3805e361e4eabc6f3df48d305299e0fde64cb24b6e95443c01de907a2e7d"
+        "SKILL.md": "sha256:db7e7188ac4fd47f4925ae6550e0233365b3b05be40f45235ab3a0a6b0165156"
+      }
+    },
+    "to-spec": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/to-spec",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.672281+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/to-spec",
+      "version": "391a270",
+      "tree_hash": "b2f449aa3da9578b08dcea74afd9adee20285586",
+      "file_hashes": {
+        "SKILL.md": "sha256:267638edd513b5918de626ad5605d261952abb7428cb308869c663ca924e93e7"
+      }
+    },
+    "to-tickets": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/to-tickets",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:55.735329+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/to-tickets",
+      "version": "391a270",
+      "tree_hash": "c0bc0e58663eec76e769c1496fe124be4545a2ff",
+      "file_hashes": {
+        "SKILL.md": "sha256:1846d215e24ec1219b199a708329ca915db93138d4f3675af29db4d32ee41391"
       }
     },
     "triage": {
       "source": "https://github.com/mattpocock/skills/skills/engineering/triage",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.204668+08:00",
+      "installed_at": "2026-07-12T19:44:55.800581+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/engineering/triage",
-      "version": "b8be62f",
-      "tree_hash": "de4f182c30876a2460ca307e2f601b9b892527e5",
+      "version": "391a270",
+      "tree_hash": "3e7a49151929d884365035cb322de099c15b33d3",
       "file_hashes": {
-        "AGENT-BRIEF.md": "sha256:1c71c747aa97d938f75ec7a4b8fe87451763b38a3ce6348acf2b222e5819b2e5",
-        "OUT-OF-SCOPE.md": "sha256:8ed8cf27833444060c81b3961a83c0e3d8e6cf2fcb2ddf6f8b07c6655cbb0d85",
-        "SKILL.md": "sha256:b819f0285e4e5814ac6472d0217f07dc9f23d2fdae3ebb0dd31d98360d8ac029"
+        "AGENT-BRIEF.md": "sha256:5b78d347cc53f6bcf7b875106005ccf5315055fa4cf75eb28d41e96ee426d27b",
+        "OUT-OF-SCOPE.md": "sha256:2526f998fd7ca5e956d3f6f234bcc2431a5971ee769f1148ddc60b92f04d5914",
+        "SKILL.md": "sha256:d45827c299c021f77b0f146fefa3ee679b13f99e9a2ffdf48e8de2347adeefe1"
       }
     },
     "ubiquitous-language": {
       "source": "https://github.com/mattpocock/skills/skills/deprecated/ubiquitous-language",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:21.796786+08:00",
+      "installed_at": "2026-07-12T19:44:54.775332+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/deprecated/ubiquitous-language",
-      "version": "b8be62f",
+      "version": "391a270",
       "tree_hash": "483fe10b01bed81b7eba7ee26df3f1bef9540c88",
       "file_hashes": {
         "SKILL.md": "sha256:2449e2345b96b9f1e861c697b5eab50d03ae1254481a4306b6f815684e523b3a"
       }
     },
-    "write-a-skill": {
-      "source": "https://github.com/mattpocock/skills/skills/productivity/write-a-skill",
+    "wayfinder": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/wayfinder",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.882433+08:00",
+      "installed_at": "2026-07-12T19:44:55.863633+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
-      "subdir": "skills/productivity/write-a-skill",
-      "version": "b8be62f",
-      "tree_hash": "2f252b35aa238879afc5a230ac30343708dee0b3",
+      "subdir": "skills/engineering/wayfinder",
+      "version": "391a270",
+      "tree_hash": "83a96a4454c069148d8648fd21ca62a58ac15db2",
       "file_hashes": {
-        "SKILL.md": "sha256:be8f20e66309258034b82a7db5040b03798aa40546f9d387662c2bd86be23123"
+        "SKILL.md": "sha256:bef437de697fb6984a8a90b7fd82f128609148d6e02f635ce419d03555b351e1"
+      }
+    },
+    "wizard": {
+      "source": "https://github.com/mattpocock/skills/skills/in-progress/wizard",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:56.122591+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/in-progress/wizard",
+      "version": "391a270",
+      "tree_hash": "651aef462428e4370678733f8c9d9e3723f2cb07",
+      "file_hashes": {
+        "SKILL.md": "sha256:e113612095b14178e680022153f2409fb14ea8b992e55d59ad8ce94071ffaf49",
+        "template.sh": "sha256:4ebf795271ea5be1326e42de60608ab5f01dd6e070ee6d16168e618dca70a14f"
       }
     },
     "writing-beats": {
       "source": "https://github.com/mattpocock/skills/skills/in-progress/writing-beats",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.340464+08:00",
+      "installed_at": "2026-07-12T19:44:56.186758+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/in-progress/writing-beats",
-      "version": "b8be62f",
-      "tree_hash": "5e947c333ec8502246992f3e7ad340545796ac67",
+      "version": "391a270",
+      "tree_hash": "28c4a84a44e1e44b28ce0c45e01892fa3691ace6",
       "file_hashes": {
-        "SKILL.md": "sha256:0843367d0a653bb17e61b3771d0ec08fa463663bc0ab6f3f421141b2687c4429"
+        "SKILL.md": "sha256:668185cfb6eb6a324b8d864404c398e21f3cddbb637b760e39b7784c8c5e4fee"
       }
     },
     "writing-fragments": {
       "source": "https://github.com/mattpocock/skills/skills/in-progress/writing-fragments",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.385002+08:00",
+      "installed_at": "2026-07-12T19:44:56.25056+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/in-progress/writing-fragments",
-      "version": "b8be62f",
-      "tree_hash": "d12fe507a3226039cfb74894ff67411051aef974",
+      "version": "391a270",
+      "tree_hash": "ae1380aef2436f7a7eb1d62aedcc5f2b8e71d6c5",
       "file_hashes": {
-        "SKILL.md": "sha256:4ffa34a701caff27da54b9e073fef48471f0ccafee009d404c22ae542d0e8dea"
+        "SKILL.md": "sha256:c61b6608f227b0eee1b832273360cf5088ad68c343c15ec9c06673086662e64e"
+      }
+    },
+    "writing-great-skills": {
+      "source": "https://github.com/mattpocock/skills/skills/productivity/writing-great-skills",
+      "type": "github-subdir",
+      "installed_at": "2026-07-12T19:44:57.050031+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/productivity/writing-great-skills",
+      "version": "391a270",
+      "tree_hash": "c84411b360fad91b8756e60fa17fd5b5761422dd",
+      "file_hashes": {
+        "GLOSSARY.md": "sha256:cccd684c73fb7a06f523497b0121765f92d2b33d6ef9c51602294849233451d6",
+        "SKILL.md": "sha256:4d6ccbc3760b1bd4107c495a79872286ea69494003f3b0a719fc95b147457061"
       }
     },
     "writing-shape": {
       "source": "https://github.com/mattpocock/skills/skills/in-progress/writing-shape",
       "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.430211+08:00",
+      "installed_at": "2026-07-12T19:44:56.313544+08:00",
       "repo_url": "https://github.com/mattpocock/skills.git",
       "subdir": "skills/in-progress/writing-shape",
-      "version": "b8be62f",
-      "tree_hash": "3da82ab342a9fef004368cd48a9aa80ac1dd7b29",
+      "version": "391a270",
+      "tree_hash": "2ca73419c5762c668a30ae0c160165b9baf5b133",
       "file_hashes": {
-        "SKILL.md": "sha256:81a542b95fa865325835bf5ec7644a98e657c1e0f3374c56cb9f3b42b374660f"
-      }
-    },
-    "zoom-out": {
-      "source": "https://github.com/mattpocock/skills/skills/engineering/zoom-out",
-      "type": "github-subdir",
-      "installed_at": "2026-05-22T18:22:22.249469+08:00",
-      "repo_url": "https://github.com/mattpocock/skills.git",
-      "subdir": "skills/engineering/zoom-out",
-      "version": "b8be62f",
-      "tree_hash": "6ecebabdea814d12888f56a611da7bf182b5fb26",
-      "file_hashes": {
-        "SKILL.md": "sha256:2a6894c7f9b1c9c55f451c625a834c4f377e217b623a85280e55db5fe9cacf48"
+        "SKILL.md": "sha256:67d34422bbe43cfd523dea9fe7b3ec5260791aed8ea52309b5b85f9d76f32745"
       }
     }
   }
