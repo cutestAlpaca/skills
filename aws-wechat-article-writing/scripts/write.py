@@ -26,6 +26,8 @@
     python write.py continue <article.md>              续写未完成的文章
     python write.py prompt draft <topic_card.md>       只输出提示词JSON(不调LLM)
     python write.py prompt rewrite <article.md> --instruction "..."
+    python write.py check <draft.md>                  按产出配额量一遍稿子（摘要/加粗/金句/标签列表）
+                                                       打印加粗串成的提要；有硬性项未达标时退出码 1
     python write.py strip-citations <draft.md> -o <article.md>
                                                        剥离 （资料路径：...） 引用标注（review skill 定稿前调用）
 """
@@ -51,12 +53,15 @@ def _err(msg: str):
     sys.exit(1)
 
 
+# 诊断信息一律走 stderr。stdout 是**数据通道**：`prompt` 往它输出 JSON、
+# `strip-citations` 往它输出正文。把 [INFO] 混进去，`write.py prompt … > x.json`
+# 拿到的就不是合法 JSON——实测踩到，文件头两行是 [INFO] 然后才是 `{`。
 def _ok(msg: str):
-    print(f"[OK] {msg}")
+    print(f"[OK] {msg}", file=sys.stderr)
 
 
 def _info(msg: str):
-    print(f"[INFO] {msg}")
+    print(f"[INFO] {msg}", file=sys.stderr)
 
 
 def _coerce_single_preset(field_label: str, raw) -> str:
@@ -462,6 +467,27 @@ def _image_density_value(screening: dict) -> str:
     return (screening.get("image_density") or "").strip() or "每节一图"
 
 
+# 密度词的定义。**这几个词是本套件自造的词汇，模型不认识。**
+#
+# 此前提示词只把 `image_density` 的值原样拼进去（「配图密度必须遵循：每节一图」），
+# 等于丢一个自定义词让模型自己猜是什么意思。实测五篇真稿，每一篇产出的正文配图
+# 标记数都少于 `##` 小节数——密度配的是每节一图，实际只出了两三个。
+#
+# 定义原本只写在 images skill 的 references/image-method.md 里，而那份文档是配图
+# 阶段读的，写稿阶段根本读不到。两处必须保持同一套措辞。
+_DENSITY_RULES = {
+    "每节一图": "每个 `##` 小节各配一张，不多不少",
+    "按需配图": "只在文字讲不清的地方配（流程、对比、数据），其余不配",
+    "少图": "全篇只配 1–2 张最关键的",
+    "多图": "每 2–3 个自然段配一张",
+}
+
+
+def _density_rule(density: str) -> str:
+    """密度词对应的具体规则；自定义词返回空串（按字面理解）。"""
+    return _DENSITY_RULES.get((density or "").strip(), "")
+
+
 def _resolve_image_source(screening: dict) -> str:
     """图片来源：generated | user（默认 generated）。"""
     src = (screening.get("image_source") or "").strip().lower()
@@ -534,6 +560,17 @@ def _validate_reference_path(p: Path, repo_root: Path) -> Path:
     if not rp.is_file():
         _err(f"参考资料文件不存在：{rp}")
     return rel
+
+
+# 版式组件的 `:::` 语法**不再写进提示词**（原 build_components_block，2026-09-07 移除）。
+#
+# 链路定为「markdown 语法 → 按语法输出 → 渲染器排版」：写手只产出标准 markdown，
+# 识别结构是排版层的事。让写手同时掌握标准 markdown 和一套私有语法，就是耦合——
+# 而且那套语法只有本套件认得，稿子换个工具就废了。
+#
+# 排版侧仍然认 `:::`（存量草稿、用户手写时可用），只是不再主动教。markdown 表达得了的
+# 都走标准写法：有序列表、两列表格、任务列表、`>` 引用、`##`、首段。markdown 表达不了的
+# （stat 的大数字对、layers 的层级图）目前就不产出——这是这个取舍明确付出的代价。
 
 
 def build_reference_library_block(raw_paths: list[str], cwd: Path) -> str:
@@ -640,7 +677,78 @@ def build_system_prompt(
         "- 开头 2-3 句必须吸睛\n",
         "- 段落短小，适合手机阅读\n",
         "- 严禁把结构指引中的元标签（如【开头】【结尾】等）或「互动话题／互动时间／互动引导」之类字样当作正文标题或加粗标签输出；要做互动收尾就直接写成自然句子（如一句抛给读者的开放式提问），不加任何标签\n",
-        "- 不要输出任何解释性文字，只输出文章本身",
+        "- 不要输出任何解释性文字，只输出文章本身\n",
+        # 链路是「markdown 语法 → 按语法输出 → 渲染器排版」。写错的标记不会报错——
+        # 渲染照常完成，读者会在正文里直接看见 `__加粗__` `###### 六级` `[^1]` 这些符号。
+        # 实测模型最常写错的就是下划线强调、裸 URL、Setext 标题这三样，所以逐条点名。
+        "\n### Markdown 语法（硬性）\n",
+        # markdown 语法是系统不变量，不是用户偏好——用户不会写、也不该知道要写。
+        # 所以它只能来自代码侧，不能指望 .aws-article/writing-spec.md 提及。
+        # 这一节无条件拼在最后，并显式声明优先级：上面的用户写作规范若与之冲突，
+        # 以本节为准。否则用户随手写一句「强调用 __双下划线__」就能把整条链路带歪。\n"
+        "以下几条是**格式规范**，与上文任何风格约定冲突时以本节为准"
+        "（风格由上文决定，标记写法由本节决定）：\n",
+        "- 加粗只用 `**加粗**`，斜体只用 `*斜体*`。**不要**用 `__加粗__` 或 `_斜体_`\n",
+        "- 小标题只用 `## ` `### `（井号后有空格）。**不要**用 `====` / `----` 下划线式标题\n",
+        "- 链接必须写成 `[锚文本](https://…)`。**不要**在正文里留裸 URL\n",
+        "- 无序列表用 `- `，有序列表用 `1. `。有序列表只在**真有先后**时用；"
+        "并列的几项用 `- `，否则等于替读者断言了一个不存在的顺序\n",
+        "- 代码块用三个反引号围栏。**不要**用四个空格缩进当代码块\n",
+        "- 表格必须带分隔行 `|---|---|`\n",
+        "- 需要一个明显转场时用独占一行的 `---`（上下各留空行）——排版会把它换成本模版的分隔装饰\n",
+        "- **不要**输出任何 HTML 标签（`<br>` `<div>` 等），排版由渲染器负责\n",
+        "- **不要**使用 `:::` 之类的自定义块语法，写标准 markdown 即可\n",
+        # 下面三条管的不是「怎么写」而是「写多少」。语法规则模型都照做，但没有配额
+        # 就一处都不产出——真稿实测：金句卡 0/10 篇，正文段落内的加粗 0/5 篇
+        # （写出来的加粗全在列表标签里），读者在手机上一屏扫过去没有任何落点。
+        "\n**以下是产出配额，不是可选项：**\n",
+        # 摘要在「输出要求」里已经写过一次，但那是一串并列项里的一条，实测三篇连着漏。
+        # 挪进配额区重申——这一区的几条（配图数、金句数）是实测唯一被稳定执行的。
+        # 漏掉的代价不显眼却确定：第一个 `##` 之前没有 `>`，导语版式就整篇不出现。
+        "- **正文开头必须有摘要**：紧跟标题写一段 `> ` 引用块（80-128 字）。"
+        "它是正文的一部分，要写进文章里，**不是**只填到别处的摘要字段——"
+        "第一个 `##` 之前没有 `>`，排版的导语样式就整篇不会出现。\n",
+        # 实测七篇（含改动前的三篇）导语与 article.yaml 的 digest 逐字相同。
+        # digest 显示在列表页和分享卡片上，读者点进来第一段又原样读一遍。
+        # 两者的读者处境不同：一个要决定点不点，一个已经点进来了。
+        "  **这段导语不要和摘要字段写成同一句话。** 摘要字段是给还没点进来的人看的，"
+        "负责说清「为什么值得点」；正文导语是给已经点进来的人看的，负责交代"
+        "「这篇讲什么、按什么顺序讲」。两处逐字重复，读者等于同一段话读了两遍\n",
+        # 密度早就达标了（实测四篇平均每 2.1 段一处），但读者仍然觉得「没有重点」。
+        # 因为加粗的全是 9-11 字的抽象概括短句（「成果来自工程能力的扩张」），平均 7.9 字、
+        # 只有 28% 在 6 字以内、含数字的仅 4%——正文里 9 个数字只有 2 个被加粗。
+        # 把整句的意思复述一遍再加粗，读者扫到它等于把这段又读一次，不构成落点。
+        # 所以这条规则管的是**加粗什么**，不再只管多久一次。
+        # 加粗的用途是让读者从密密麻麻的正文里一眼抓住关键信息，所以验收标准是
+        # 「只读加粗能不能串成一份提要」。两个失败方向都见过：
+        # 复述整句（9-11 字的抽象概括，扫到它等于把这段重读一遍），
+        # 和只留裸数字（`**88%**` 单独拎出来看不出是什么的 88%）。
+        # 加粗 = 划重点 = 让读者在长文里快速读完。验收标准只有一条：**只读加粗能不能
+        # 读完这篇文章**。三轮都在调字数，从「9-11 字复述整句」调到「2-4 字裸名词」，
+        # 两头都失败——因为字数是手段不是目的。现在把目的直接写出来。
+        "- **加粗是划重点**：读者没时间读完两千字，加粗要让他只看这些就知道你说了什么。\n",
+        "  **验收标准：把全文的加粗按顺序抽出来连读，应该是一篇能独立看懂的缩写版。**"
+        "读起来像词云（「透明度 / 瓶颈 / 采用」）或像把段落重念一遍，都是挑错了。\n",
+        # 密度用**字数**表述，不用段数——段是会伸缩的单位，「每 2-3 段一处」在
+        # 短段账号和自然段账号那里差两倍多，实测两篇分别是每 40 字和每 194 字一处。
+        "  据此倒推：**每 100 字左右就该有一个落点**（手机上约 4-5 行），"
+        "连续 200 字不许一个都没有——那是读者划过整整一屏还找不到重点。"
+        "每个 `##` 小节至少一处，结尾段也要有；一段里最多两处；"
+        "每处都要**能独立看懂**——数字连着它的意思（`**省 88% Token**`），"
+        "判断连着它的对象（`**打断不等于撤销**`），术语连着它的定性（`**按问题找证据**`）。\n",
+        "  文中的关键数字尽量都覆盖到，那是读者扫读时最先停下的地方。"
+        "**不要**加粗整句的概括，**不要**每段都加在首句同一位置\n",
+        "- 本篇但凡出现**三项以上的并列**（并列的条件、选项、判断、对照项），"
+        "就写成 `- **标签**：说明` 的列表，不要压进一个长段落。"
+        "排版会把标签在视觉上提出来；即使段落偏好要求「完整自然段」，"
+        "那管的是叙述段，枚举仍然用列表\n",
+        "- 全文**恰好写一处**金句：最值得截图转发的那一句，写成 `> 金句。 —— 出处` —— "
+        "带破折号出处的引用会排成金句卡。写两处以上，卡片就退化成装饰条，一处都不会被转；"
+        "不写出处就是普通引用。"
+        # 卡片那一行放不下长出处。实测把出处写成论文全名（68 字符）时，排版侧的
+        # 锚定匹配直接失配，静悄悄退回普通引用块——作者是看不出来的。
+        "**出处不超过 25 个字符**（写人名或机构，如「张三」「微软研究院」；"
+        "别把论文全名、书名副标题塞进去，超了排版就不成卡）",
     ]
     if ref_block:
         out_lines.append(
@@ -655,7 +763,9 @@ def build_system_prompt(
             "- 本篇图片由用户提供，必须直接使用现有图片，不得再输出 placeholder\n"
             "- 封面只能出现 1 张，且必须放在标题之前\n"
             "- 正文按图片分析内容匹配到对应章节；图片语法：`![类型名：画面内容](imgs/文件名)`\n"
-            "  冒号前只能是：封面、信息图、氛围、流程图、对比、实证之一；"
+            # 与生图模式同一套四个类型名，不要在这里多列「流程图/对比」——
+            # 同一个标记在两条分支上有两套词表，写手只会挑错。
+            "  冒号前只能是：封面、实证、信息图、氛围之一（流程/结构/数据/对比都归「信息图」）；"
             "禁止在方括号内写字面「类型」二字；冒号后为简短画面概括（如「淘米」「小孩钓鱼」），"
             "- 若某图不适配正文可不使用，但不得虚构不存在的文件名\n"
         )
@@ -663,12 +773,29 @@ def build_system_prompt(
             parts.append("- 可用图片文件： " + ", ".join(image_files))
     else:
         density = _image_density_value(screening)
+        rule = _density_rule(density)
         parts.append(
             "\n## 配图标记（硬性）\n"
-            f"- 配图密度必须遵循：{density}（未配置时默认每节一图）\n"
-            "- 正文配图数量需尽量满足该密度规则\n"
+            f"- 配图密度：**{density}**"
+            + (f" —— 就是说：{rule}\n" if rule else "（未配置时默认每节一图）\n")
+            + "- 这是**硬配额不是参考值**：数量对不上就是没写完，写完后请自己数一遍\n"
             "- 格式：`![类型名：画面内容](placeholder)`。全角冒号 `：` 分隔两段\n"
-            "  冒号前只能是：封面、信息图、氛围、流程图、对比、实证之一；"
+            "- **图注单独写**，放在括号内路径之后的引号里："
+            "`![信息图：画面内容](placeholder \"这里是图注\")`。\n"
+            "  冒号后的「画面内容」是**给生图模型的画面指令**，不会显示给读者；"
+            "图注是**给读者看的**，两者用途不同，不要互相复制。\n"
+            "- **绝大多数图不需要图注**。图注要补充画面之外的信息（数据出处、一句判断、"
+            "反常识的细节），不要复述读者眼睛已经看见的东西——"
+            "「开发者站在巨型 99.9 分数牌前望向远方」这种就是废话图注。写不出有信息量的"
+            "图注就不写第三个参数。\n"
+            # 类型名只保留**下游真会用到**的四个。此前是六个，但「流程图/对比」与
+            # 「信息图」在下游没有任何差别——配图阶段会按内容重新判形态（流程步骤/
+            # 对比两栏/数据图表…），标记里的细分只是让写手多猜一次。四个各自的作用：
+            # 封面 → 排版跳过它、发布拿它当封面；实证 → 必须真实截图，不许生成；
+            # 信息图 → 信息位，图注有意义；氛围 → 节奏位，不出图注。
+            "  冒号前只能是这四个，各自有下游含义：**封面**（放标题前，不进正文）、"
+            "**实证**（真实截图/实拍，不是画的）、**信息图**（解释内容，流程/结构/数据/对比都算）、"
+            "**氛围**（只为换口气，不承载信息）\n"
             "  冒号后为画面内容的简短概括即可（如「淘米」「小孩钓鱼」「窗前喝水」），"
             "  也可略写细；禁止只用「配图」「示意图」等敷衍词\n"
             "- 必须用图片语法 ![]()，不能写成 []()（少写 ! 会在排版时变成链接）\n"
@@ -785,6 +912,162 @@ def _strip_citations(text: str) -> str:
     return cleaned
 
 
+_CJK = r"一-鿿　-〿＀-￯"
+
+# 金句卡的判据，与 format.py 里那条**逐字相同**。改一处必须同改两处，否则
+# 「写的时候说合格、排的时候不成卡」会再来一次。出处上限 25 字符是卡片版式
+# 决定的：再长就撑破那一行。
+QUOTE_CARD_RE = re.compile(r"^(.*?)\s*(?:——|—|--)\s*([^\s—][^—]{0,24})$")
+
+
+def _emph_units(s: str) -> int:
+    """加粗的「长度」按显示单位算：一个汉字 1 个，一串连续的数字/英文也算 1 个。
+
+    按字符数会误伤中英混排。`省 88% Token` 是理想的加粗——数字连着它的意思——
+    但 len() 数出来是 11，会被当成「复述整句」拦下来，而它恰恰是我们要的样子。
+    """
+    return len(re.findall(rf"[{_CJK}]", s)) + len(re.findall(r"[A-Za-z0-9][A-Za-z0-9.%]*", s))
+
+
+def _is_bare_noun(s: str) -> bool:
+    """短的纯中文词 —— 「透明度」「瓶颈」「商业模式」这种单独读看不出想说什么的。
+
+    含数字或英文的不算（`省 88% Token` 自带信息）；长一点的中文短语也不算
+    （`按问题找证据` 能独立成立）。只拦「纯中文且 ≤4 字」这一类。
+    """
+    return not re.search(r"[A-Za-z0-9]", s) and len(re.findall(rf"[{_CJK}]", s)) <= 4
+
+
+def check_output(text: str) -> tuple[list[str], list[str], str]:
+    """对着产出配额量一遍稿子，返回 (不合格项, 提醒项, 加粗串成的提要)。
+
+    自检此前是一张表，靠人肉数——实测漏得很稳定：连着三篇没写摘要、四篇一个列表
+    都没有、加粗密度够了但全是复述整句。这些都是能直接数出来的，不该靠眼睛。
+
+    加粗那一项尤其需要机器量：数量达标不等于有重点。判据是「只读加粗能不能串成
+    一份提要」，这里把提要打印出来，让人一眼看出串不串得起来。
+    """
+    lines = text.splitlines()
+    bad: list[str] = []
+    warn: list[str] = []
+
+    first_h2 = next((i for i, l in enumerate(lines) if l.startswith("## ")), len(lines))
+    if not any(l.strip().startswith(">") for l in lines[:first_h2]):
+        bad.append("第一个 `##` 之前没有 `>` 摘要 —— 导语版式整篇不会出现")
+
+    body = [l for l in lines
+            if l.strip() and not l.startswith(("#", "!", ">", "-", "|", "```"))]
+    bolds = [m for l in body for m in re.findall(r"\*\*([^*\n]+)\*\*", l)]
+
+    # 密度按**字数**算，不按段数。段是个会伸缩的单位：`paragraph_preference` 写
+    # 「短段为主」的账号一段 35 字，写「自然段为主」的一段 80 字，同一条「每 2-3 段
+    # 一处」落到读者眼里差了两倍多。实测 2026-09-12 两篇都报 [OK]：一篇每 194 字
+    # 一处，另一篇每 40 字一处——规则被严格执行，读者体验天差地别。
+    #
+    # 读者感受到的是**划过多少屏才碰到下一个落点**，所以判据用字数。
+    # 手机上一行约 22 字，100 字≈4-5 行，是「一眼扫过去总能停一次」的距离。
+    #
+    # 落点包含列表里的 `- **标签**：` ——读者的眼睛不区分它和段内加粗，
+    # 都是扫读时停下来的地方；只算段内加粗会逼一篇以列表为主的稿子硬塞。
+    CHARS_PER_BOLD = 100        # 目标密度：每 100 字一处
+    MAX_GAP = 200               # 硬上限：连续 200 字没有落点就是一屏空白
+    all_bolds = re.findall(r"\*\*([^*\n]+)\*\*", text)
+    read_text = "\n".join(l for l in lines
+                          if l.strip() and not l.startswith(("#", "!", ">", "|", "```")))
+    total_cjk = len(re.findall(rf"[{_CJK}]", read_text))
+    if total_cjk >= 300:
+        need = max(1, total_cjk // CHARS_PER_BOLD)
+        if len(all_bolds) < need:
+            bad.append(f"正文 {total_cjk} 字只有 {len(all_bolds)} 处加粗（每 "
+                       f"{total_cjk // max(1, len(all_bolds))} 字一处），至少要 {need} 处 —— "
+                       f"目标是每 {CHARS_PER_BOLD} 字左右有一个落点")
+
+        # 平均够了也可能局部全是空白：实测有连着三段一个加粗都没有的稿子。
+        gap = 0
+        worst = 0
+        for l in read_text.splitlines():
+            n = len(re.findall(rf"[{_CJK}]", l))
+            if re.search(r"\*\*[^*\n]+\*\*", l):
+                worst = max(worst, gap)
+                gap = 0
+            else:
+                gap += n
+        worst = max(worst, gap)
+        if worst > MAX_GAP:
+            bad.append(f"有一段 {worst} 字的连续空白没有任何加粗（上限 {MAX_GAP}）—— "
+                       f"读者在手机上要划过约 {worst // 22} 行才碰到下一个落点")
+
+    # 两头都要拦。只拦长的那次，模型转头去写 2-4 字的裸名词，48 处平均 3.6 字，
+    # 机械指标全绿而串起来是个词云——工具报了假绿灯，比不报还糟。
+    #
+    # 上限从 8 提到 12：8 在惩罚正确答案。实测三篇连着被点名的是
+    # 「形式化不等于首次发现证明」「候选产量不等于交付吞吐量」——正是提示词要求的
+    # 「判断连着它的对象」那个形态。真正该拦的是二十来字的整句复述。
+    long_ones = [b for b in bolds if _emph_units(b) > 12]
+    if long_ones:
+        warn.append(f"{len(long_ones)} 处加粗偏长，多半是把整句复述了一遍："
+                    + "、".join(f"「{b}」" for b in long_ones[:3]))
+
+    bare = [b for b in bolds if _is_bare_noun(b)]
+    if bolds and len(bare) > len(bolds) * 0.5:
+        warn.append(f"{len(bare)}/{len(bolds)} 处加粗是短的纯中文词，多半是裸名词——"
+                    f"单独读看不出想说什么，读者得回原句才懂："
+                    + "、".join(f"「{b}」" for b in bare[:3]))
+
+    # 覆盖率要相对**加粗预算**算，不是相对数字总数。实测一篇数据稿：14 段正文的加粗
+    # 预算约 7 处，而正文有 16 个带单位的数字——按「覆盖过半」要求就得加粗 9 个数字，
+    # 预算全给了数字，一句判断都放不下。两条规则在数字密集的文章里直接互斥。
+    # 改判「加粗里有没有数字的份额」：数字是最有效的落点，但不必、也不可能个个都加。
+    nums_in_text = len(re.findall(r"\d+(?:\.\d+)?\s*(?:%|倍|美元|分|万|亿|个百分点)",
+                                  "\n".join(body)))
+    nums_bolded = len([b for b in bolds if re.search(r"\d", b)])
+    if nums_in_text >= 3 and bolds and nums_bolded * 3 < len(bolds):
+        warn.append(f"正文有 {nums_in_text} 个关键数字，而 {len(bolds)} 处加粗里只有 "
+                    f"{nums_bolded} 处带数字 —— 数字是读者扫读时最先停下的地方")
+
+    if bolds:
+        heads = sum(1 for l in body for m in re.finditer(r"\*\*[^*\n]+\*\*", l)
+                    if m.start() < len(re.split(r"[。！？]", l)[0]))
+        if heads > len(bolds) * 0.6:
+            warn.append(f"{heads}/{len(bolds)} 处加粗都落在段落首句，位置要有变化")
+
+    # 判据必须和 format.py 里那条**逐字一致**（QUOTE_CARD_RE）：它是**整段锚定**的，
+    # 出处上限 25 字符。这里原先用的是无锚 finditer，两边于是各说各话——
+    # 实测 2026-09-11：出处写成「Murphy-Hill 等，《Adoption and Impact of Command-Line
+    # AI Coding Agents》」（68 字符），check 报「金句 ✓」放行，format.py 的锚定匹配失败，
+    # 渲出来是个普通引用块。作者拿到绿灯，文章静悄悄少了一张可截图转发的卡。
+    #
+    # 工具之间判据不一致比没有工具更糟：它给的是假绿灯。
+    quote_blocks: list[str] = []
+    cur: list[str] = []
+    for l in lines[first_h2:]:
+        if l.strip().startswith(">"):
+            cur.append(l.strip()[1:].strip())
+        elif cur:
+            quote_blocks.append(" ".join(x for x in cur if x))
+            cur = []
+    if cur:
+        quote_blocks.append(" ".join(x for x in cur if x))
+
+    cards = [q for q in quote_blocks if QUOTE_CARD_RE.match(q)]
+    if not cards:
+        near = [q for q in quote_blocks if re.search(r"(?:——|—|--)", q)]
+        if near:
+            src = re.split(r"(?:——|—|--)", near[0])[-1].strip()
+            bad.append(f"金句的出处太长（{len(src)} 字符，上限 25），排版时会退回普通引用块、"
+                       f"出不了金句卡：「{src[:30]}…」")
+        else:
+            bad.append("没有带出处的金句（`> 金句。 —— 出处`）—— 少一块可截图转发的内容")
+    elif len(cards) > 1:
+        warn.append(f"有 {len(cards)} 处带出处的引用，金句卡应恰好一处，多了就退化成装饰条")
+
+    if not any(re.match(r"^\s*[-*+]\s+\*\*", l) for l in lines):
+        warn.append("全文没有 `- **标签**：说明` 列表 —— 若文中有三项以上并列，"
+                    "压在长段落里读者没法跳读")
+
+    return bad, warn, " / ".join(bolds)
+
+
 def _build_prompts(mode, input_text, screening, writing_spec,
                    structure_template, closing_block, image_source,
                    img_analysis, instruction="", reference_library_block=""):
@@ -855,6 +1138,12 @@ def main():
     p_prompt.add_argument("--instruction", default="", help="改写要求（仅 rewrite）")
     p_prompt.add_argument("--reference", action="append", metavar="PATH", help=ref_help)
 
+    p_check = sub.add_parser(
+        "check",
+        help="对着产出配额量一遍稿子（摘要/加粗/金句/标签列表），不调 LLM",
+    )
+    p_check.add_argument("input", help="稿件路径（draft.md 或 article.md）")
+
     p_strip = sub.add_parser(
         "strip-citations",
         help="剥离正文 （资料路径：...） 引用标注（review skill 定稿前调用）",
@@ -902,6 +1191,25 @@ def main():
         )
         print(json.dumps(prompts, ensure_ascii=False))
         sys.exit(0)
+
+    # check subcommand: pure local measurement, no LLM / no config
+    if args.command == "check":
+        p = Path(args.input)
+        if not p.is_file():
+            _err(f"文件不存在: {p}")
+        bad, warn, digest = check_output(p.read_text(encoding="utf-8"))
+        if digest:
+            print("加粗串起来是这样（读得通才算挑对了）：")
+            print(f"  {digest}\n")
+        for b in bad:
+            print(f"[FAIL] {b}")
+        for w in warn:
+            print(f"[WARN] {w}")
+        if not bad and not warn:
+            _ok("产出配额全部达标")
+        elif not bad:
+            _ok(f"硬性项达标，另有 {len(warn)} 条提醒")
+        sys.exit(1 if bad else 0)
 
     # strip-citations subcommand: pure local text rewrite, no LLM / no config
     if args.command == "strip-citations":

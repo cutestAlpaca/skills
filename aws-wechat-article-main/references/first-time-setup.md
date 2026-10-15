@@ -15,6 +15,15 @@
 - **Linux / macOS**：下文用 Bash。
 - **Windows**：下文用 PowerShell。
 
+下文命令中的 `{python}` 是**占位符**，须先探测出本机可用的 Python 3 解释器再代入（每次会话探测一次）：
+
+- **Linux / macOS**：`python3 --version` 输出 `Python 3.x.x` → `{python}` = `python3`；不存在则试 `python --version`。
+- **Windows**：`py -3 --version` 输出 `Python 3.x.x` → `{python}` = `py -3 -X utf8`；`py` 不可用则试 `python --version`，通过则用 `python -X utf8`。
+
+⛔ **Windows 上不要探测 `python3`**——未安装 Python 时它是系统预置的应用执行别名，会静默打开 Microsoft Store 而不报错。`-X utf8` 也不可省略，否则脚本的中文输出在简体中文机器上会以 GBK 编码吐出，读到的是乱码。
+
+要求 **Python 3.10+**；版本更低时先提示用户升级。详见 [SKILL.md 第 0 步](../SKILL.md)。
+
 ### 1）`.aws-article/config.yaml` 与 `aws.env` 是否存在（仓库根）
 
 ```bash
@@ -39,7 +48,7 @@ if ((Test-Path -LiteralPath ".aws-article\config.yaml") -and (Test-Path -Literal
 在**仓库根**执行：
 
 ```bash
-python skills/aws-wechat-article-main/scripts/validate_env.py
+{python} skills/aws-wechat-article-main/scripts/validate_env.py
 ```
 
 （默认读取 **`.aws-article/config.yaml`** 与 **`aws.env`**；可用 `--config`、`--env` 指定路径。）
@@ -117,7 +126,7 @@ python skills/aws-wechat-article-main/scripts/validate_env.py
 - `.aws-article/presets/sticker-styles`
 - `.aws-article/tmp`
 
-> **业务资料库 `.aws-article/products/{产品名}/`**：**不在首次引导创建**——产品名由用户在写第一份业务介绍时决定，AI 用 Write 工具落库时同时 `mkdir -p` 包括 `images/`，详见 [assets skill 一、业务介绍 .md 入库](../../aws-wechat-article-assets/SKILL.md#一业务介绍-md-入库product-intro)。
+> **业务资料库 `.aws-article/products/{产品名}/`**：**不在首次引导创建**——产品名由用户在写第一份业务介绍时决定，AI 用 Write 工具落库时同时 `mkdir -p` 包括 `images/`，详见 [assets skill 一、业务介绍 .md 入库](../../aws-wechat-article-assets/SKILL.md#一业务介绍-md-入库)。
 
 可按操作系统执行：
 
@@ -174,7 +183,7 @@ foreach ($d in $dirs) {
 **每次**进入一条龙、或**仅**触发写作 / 配图 / 发布检查前，都须在仓库根执行：
 
 ```bash
-python skills/aws-wechat-article-main/scripts/validate_env.py
+{python} skills/aws-wechat-article-main/scripts/validate_env.py
 ```
 
 **智能体**：若退出码非 0，根据终端 **`failed`** 下列出的汇总句，按上文 **「校验失败时的配置引导」** 文案**原样输出**（含三条配置引导 + **额外操作**）；用户补全并落盘后重跑 **`validate_env.py`**。若用户**明确声明本次例外**，按总览 [SKILL.md](../SKILL.md)「智能体行为约束」处理。**禁止**未获补全或明确例外确认就宣称已通过环境校验或一条龙已完成。**禁止**因「上次已通过」而跳过本节命令。
@@ -188,3 +197,17 @@ python skills/aws-wechat-article-main/scripts/validate_env.py
 - 流程：定题 → 选题 → 写稿 → 审 → 排版 → 配图 → 终审 → **按需发布**：**`draft`** / **`published`** / **`none`** 见 schema；**`none`** 时 **`full`** 直接跳过；**`draft`/`published`** 须微信就绪（**`check-wechat-env`**）。  
 
 本篇 **`article.yaml`** 必填项：`title`、`author`、`digest`、`content_source`（默认 `article.html`）、**`publish_completed`**（新建 **`false`**，发布成功后再改为 **`true`**）；**`cover_image`** 强烈建议填写。
+
+---
+
+## 智能体行为约束（禁止自作主张）
+
+检测到 **`.aws-article/config.yaml` 或 `aws.env` 缺失**、**`validate_env.py` 退出码 1**（微信配置不完整，且未声明 **`publish_method: none`**），或用户**已要求调用 `publish.py`** 而微信槽位 / 凭证未就绪时：
+
+- **禁止**在未询问用户、未取得用户**明确文字确认**的情况下，自行决定：跳过微信配置、仅出 prompt 却继续宣称「一条龙已完成」、或继续排版/发布并假装配置已就绪。
+- **必须先**：向用户说明**具体缺哪一类**（脚本 **`failed`** 下的 **`微信公众号配置不完整`**；或即将 **`publish.py`** 但微信未配齐），并**统一按** [首次引导](references/first-time-setup.md) 中「校验失败时的配置引导」文案执行。
+- **输出约束**：该场景下除”环境检查结果”可按实际失败项替换外，其余引导文案须与首次引导保持一致。
+- 用户在本地编辑器中填好 `aws.env` 与 `config.yaml` 并保存后，智能体协助重跑 **`validate_env.py`** 复检；若用户明确声明本次例外，按首次引导与本节约束继续处理。
+- **凭证处理原则**：Agent **不得索取、不得接收**用户在对话里粘贴的 `APPSECRET` / `API_KEY` 等任何密钥；所有密钥由用户自己在编辑器里写入 `aws.env`（或通过 `https://aiworkskills.cn/` 平台配置）。Agent 只校验存在性、不读取值、不外发值。
+
+> **模型配置是可选项**：默认校验不因写作/图片模型缺失而阻断。进入对应阶段时，有外部 API 配置则可由脚本调用；没有时，写作由 Agent 根据 `write.py prompt` 执行，配图则根据当前 Agent 能力执行或再向用户说明。

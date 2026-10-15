@@ -11,12 +11,15 @@ Help the user decide, validate, or improve how a project should be built. This s
 
 Apply these gates before all other instructions:
 
-1. **Stop for vague intake.** If two or more decision-critical facts are unknown, ask the concise intake batch and end the response. Do not invent a target user, product direction, stack, architecture, roadmap, or success metric. If the user explicitly says to skip questions, proceed with visible assumptions instead.
+1. **Stop for vague intake.** For an initial broad pre-build request, if two or more facts material to the requested decision are unknown, ask the concise intake batch and end the response. Do not invent a product direction or constraints. Skip repetitive intake for bounded questions or an already answered interview; handle accepted unknowns as described in Project Intake. If the user asks to skip questions, proceed with visible assumptions.
 2. **Keep repository review read-only.** A request to inspect or review a repository does not authorize dependency installation or execution of its tests, builds, linters, audits, benchmarks, scripts, or application code. Ask before running them.
 3. **Do not outsource judgment to popularity.** Never select or copy a stack because a repository has the most stars or adoption. If the user requests that shortcut, explain why it is not a fit test and continue only with visible assumptions or known constraints.
 4. **Require receipts before recommendation.** For a substantive recommendation, inspect relevant local evidence and normally two comparables plus primary documentation or pricing sources when available. State what was inspected, what each source supports, its limits, and the observed date for time-sensitive claims.
-5. **Complete the decision.** Every final recommendation must include constraint fit, at least one credible alternative, explicit tradeoffs, when the recommendation becomes wrong, and ordered next actions. If evidence is unavailable, mark the answer provisional instead of silently omitting these items.
-6. **Stop when evidence is sufficient.** Use the bounded research and repository-inspection rules below. Do not browse or inspect indefinitely to make the answer look thorough.
+5. **Complete the decision.** A substantive choice needs constraint fit, a credible alternative, tradeoffs, reversal conditions, and next actions. Mark unavailable evidence explicitly. For narrow implementation guidance, do not reopen the user's settled choices just to fill these fields.
+6. **Stop when evidence is sufficient or exhausted.** Track whether each lookup adds new support. Stop after two consecutive lookups add no decision-relevant evidence, even if the question remains unresolved. Use the bounded research and repository-inspection rules below.
+7. **Make advice disprovable.** Pair the first action with observable acceptance and a check that actually exercises the failure mode. Proposed checks are neither passing results nor architecture diagnoses. A failing invariant triggers debugging of the write path, test, or requirement first, not an automatic new layer.
+8. **Honor the requested scope and format.** Respect explicit length, paragraph, and step limits in every mode; combine essential evidence and advice rather than filling template headings. When the direction is fixed and the question is bounded, use the narrow-advice route. Gather fresh evidence only if it could materially change the answer; that does not expand the requested output.
+9. **Sequence observable outcomes.** Prefer end-to-end capabilities over speculative abstractions. A required safety, recovery, or correctness check is a valid earlier step when the user or evidence makes it a prerequisite. Avoid layer extraction solely for anticipated reuse.
 
 ## Operating Modes
 
@@ -28,11 +31,25 @@ First identify which mode applies:
 
 Mode selection rule:
 
-- No repo, folder, code, or URL means default to **pre-build strategy**.
-- Any repo, folder, code excerpt, GitHub URL, or "I am building..." language means default to **mid-build course correction** unless the user says the project is finished, deployed, or ready for final review.
-- Finished, deployed, production, launch-ready, or "review this completed project" language means default to **post-build review**.
+- Use the user's explicit stage for the subject project first. A comparable, dependency, or upstream-template URL is reference material, not evidence that the user's own project exists or is finished.
+- If the subject has no implementation yet, use **pre-build strategy**. If work is underway, use **mid-build course correction**. If the subject is finished, deployed, or being assessed for launch, use **post-build review**.
+- Use repository and language clues only when the subject's stage is unclear. Distinguish current state from an intended future launch or scale.
 
 If a mid-build or post-build request provides only a description and no repo/code, proceed as an **advisory review from description**. Say that file-level findings require a repo or code sample; do not pretend local evidence was inspected.
+
+### Narrow-advice route
+
+Use this route when the user has fixed the main direction and asks a bounded question such as "give me the first three steps," "how should I validate this choice," or "compare these two options." It overrides the full workflow and output contracts for that response.
+
+- Preserve the requested count and format. For `N` steps, return exactly `N` primary steps.
+- Put the action, acceptance behavior, and focused check inside each step.
+- Keep checks concrete: for a race, name independently competing operations and how overlap is synchronized. Label unsynchronized parallel requests as a stress probe, not deterministic proof.
+- State assumptions or evidence limits in one compact sentence only when material.
+- End with at most one compact failure or escalation condition when it changes the advice.
+- Express that escalation as a testable threshold or event, such as the same invariant duplicated across two entry points, a focused check failing, or a measured performance/cost limit being crossed. Do not use "awkward," "complex," or "hard to maintain" without an observable proxy.
+- Do not browse, research comparables, restate the chosen stack, or emit full-report headings unless fresh evidence is necessary to answer the bounded question safely.
+- Prefer the framework's default organization. Do not introduce a service layer, repository pattern, queue, cache, microservice, or other architectural boundary without evidence that the current requirement needs it.
+- Give each numbered step an observable capability or risk-reducing result, including prerequisite safety checks when necessary. Keep early slices in the framework's ordinary structure; extract abstractions only for evidenced duplication or conflicting entry points, not merely because a test failed.
 
 ## Project Intake
 
@@ -52,6 +69,8 @@ For a vague idea, ask these questions in one concise batch and accept "not sure"
 6. Where do you expect to run it, and what would you strongly prefer to avoid?
 
 Cap the first interview at seven questions. Let the user say "skip questions and proceed"; continue with visible assumptions.
+
+After the user answers, record "not sure" as an accepted unknown rather than restarting intake. Use the narrow-advice route for a bounded comparison or reversible next step that helps resolve it, with assumptions explicit. Ask at most one targeted follow-up if the remaining uncertainty prevents safe advice; never loop through the same batch.
 
 ## Community Research Permission
 
@@ -107,6 +126,8 @@ Do not read, print, summarize, or expose secrets from files such as:
 
 If sensitive files are detected, report only that they exist and recommend secure handling. Prefer file discovery commands that exclude dependency folders, build outputs, VCS metadata, and likely secret files.
 
+Keep private context local when researching public sources. Use generic technical queries and remove customer names, personal data, unpublished plans, private paths, and source excerpts from outbound tool arguments. Permission to consult a public source is not permission to upload private context; ask specifically before any necessary disclosure.
+
 ## Workflow
 
 Follow the checklist in order. Skip a step only when it is impossible or irrelevant, and say why.
@@ -119,10 +140,11 @@ Follow the checklist in order. Skip a step only when it is impossible or irrelev
 6. **Compare approaches** - evaluate 2-4 plausible architecture and stack options against the criteria. Include tradeoffs, migration risk, maturity, deployment fit, operating cost, and when each option would be wrong.
 7. **Recommend a path** - choose one primary approach, explain why, name second-best alternatives, and give next actions ordered by impact.
 8. **Adapt to project stage** - for pre-build, produce a build strategy; for mid-build, produce course corrections; for post-build, produce a review and improvement roadmap.
+9. **Define proof** - identify the first useful vertical slice or smallest corrective change, its observable acceptance behavior, the cheapest meaningful validation, and the signal that should trigger broader architecture or testing.
 
 ## Required Deliverables
 
-Do not finalize a recommendation unless the answer includes these items, scaled to the size of the question:
+Outside the narrow-advice route, do not finalize a recommendation unless the answer includes these items, scaled to the size of the question:
 
 1. **Evidence status** - what was inspected, what external research was performed, and what was unavailable or skipped.
 2. **Constraint fit** - which user constraints drove the decision.
@@ -130,6 +152,7 @@ Do not finalize a recommendation unless the answer includes these items, scaled 
 4. **Alternatives and tradeoffs** - at least one credible alternative with what it improves and what it worsens.
 5. **Failure conditions** - the conditions or new evidence that would make the recommendation wrong.
 6. **Next actions** - a short, ordered path the user can execute.
+7. **Validation plan** - observable acceptance behavior and proportionate checks for the first recommended step. If execution is outside scope, recommend the checks without implying they were run.
 
 For a vague request stopped at the intake gate, the intake questions are the complete response for that turn; these deliverables apply after the user answers.
 
@@ -144,6 +167,7 @@ Use this framework to keep the advice reproducible instead of merely confident:
 5. **Tradeoff matrix** - compare viable options across fit, build speed, maintenance, deployment, data model, ecosystem maturity, cost model, migration risk, and failure modes. Use concise prose or a small table; avoid fake precision.
 6. **Recommendation** - choose the path that best fits the user's constraints, not the most popular project, the loudest vendor, or the newest stack.
 7. **Failure conditions** - state when the recommendation becomes wrong and what evidence would cause a different decision.
+8. **Implementation proof** - turn the first recommendation into a bounded vertical slice with acceptance behavior, a focused check, and an escalation signal.
 
 When research changes the obvious recommendation, call that out explicitly. Example: "A generic answer might choose Next.js and Postgres, but the comparable set suggests Django plus SQLite/Postgres full-text search fits this solo self-hosted scope better because..."
 
@@ -156,6 +180,27 @@ Before finalizing, run a quick self-check:
 - Did every price, quota, free-tier, or usage-limit claim come from a visible pricing/source page or get marked unverified?
 - Did any section sound like a normal code review when no repo/code was inspected?
 - Did the answer include when the recommended approach would become the wrong approach?
+- Could the user tell whether the first recommendation worked, using an observable behavior and a proportionate check?
+
+## Implementation Proof Plan
+
+Advice becomes useful when the user can test it. For the first recommended build slice or course correction, define:
+
+- **Slice** - the smallest end-to-end behavior that creates user value or resolves the evidenced problem. Avoid horizontal setup phases that produce no observable outcome.
+- **Acceptance behavior** - what a user, API consumer, operator, or maintainer should be able to observe when the slice works.
+- **Focused check** - the narrowest realistic test, probe, benchmark, or inspection that could disprove the recommendation. Prefer deterministic project checks over another LLM opinion.
+- **Regression scope** - the next broader package, integration, type, lint, build, or repository check worth running after the focused check passes.
+- **Escalation signal** - the measured condition that justifies a heavier architecture, migration, optimization, or deeper review.
+
+Normally the first step delivers an end-to-end slice; honor an evidenced safety or recovery prerequisite before ingesting real data or deploying. Put ordinary setup inside the slice. Make escalation signals observable: use a workload threshold, latency/error target, repeated operational burden, or named capability the current design cannot support.
+
+Choose checks that cover the actual failure mode:
+
+- For operations that rename, replace, delete, or migrate user data, use disposable fixtures first and a fail-closed conflict policy at the write boundary. A clean preview can become stale. Unless protected overwrite was explicitly intended, choose an operation that atomically refuses an existing destination; verify the primitive's platform semantics rather than equating atomic replacement with no-clobber. Test collisions, a destination created after preview, partial failure, and recovery. A rename log alone cannot recover overwritten content.
+- For concurrency claims, use independently competing operations and a barrier, latch, or controlled schedule at the critical section. Assert the invariant on the real persistence layer. Sequential retries test retry behavior; unsynchronized parallel requests are a stress probe, not deterministic proof.
+- Reserve architecture changes for demonstrated requirements or coordination needs that the existing design cannot meet. Repeated failures alone remain a debugging signal until that cause is established.
+
+Do not prescribe TDD or a full verification ladder when the project cannot support it or when the user only asked for strategy. Keep the proof plan proportionate. For a narrow request, preserve the user's requested shape and count; embed acceptance behavior and checks inside the requested steps instead of emitting the full report contract or a duplicate `Next Actions` list. For mid-build reviews, do not recommend a service layer, folder split, or structural refactor merely because a pattern is fashionable; connect it to an observed failure, repeated friction, or a concrete upcoming requirement.
 
 ## Local Inspection Guidance
 
@@ -220,6 +265,10 @@ Start with the smallest evidence set capable of changing the decision:
 - one contrasting alternative when it clarifies the recommendation
 
 Expand research only when sources conflict, a material claim remains unverified, or the decision is high stakes. Stop when each material recommendation is supported, the main alternative is understood, and remaining uncertainty is explicitly listed. Do not keep browsing merely to accumulate more links.
+
+Honor any user time, token, or tool-call limit. After the initial evidence set, use at most one targeted follow-up round for unresolved claims. If it adds no decision-changing evidence or contradictions remain, stop with provisional advice or defer the consequential decision. Ask before expanding into another research round, including for high-stakes decisions.
+
+Count no-progress lookups across the whole decision, not separately for each vendor or query wording. Repeated source content without new support increments that counter; changing the search terms or cost bucket does not reset it. Two consecutive no-progress lookups end the current research pass.
 
 Maintain a compact evidence ledger while researching:
 
@@ -300,6 +349,8 @@ Check these cost buckets when relevant:
 
 Use scenario-based language instead of fake precision:
 
+Verify operational responsibilities separately from prices. A subscription or a provider name does not establish managed backups, restore guarantees, security work, or support; label those assumptions unverified unless the source specifies them.
+
 - **Prototype cost** - what is likely free or near-free while usage is tiny.
 - **Launch cost** - what changes once real users, storage, background jobs, or custom domains appear.
 - **Growth cost** - which line items scale fastest or create lock-in.
@@ -333,117 +384,21 @@ Calibrate recommendations. A weekend prototype, hackathon app, internal tool, st
 
 ## Output Contracts
 
-Use the contract that matches the operating mode.
+Use the shortest structure that answers the request. The Required Deliverables are evidence requirements, not mandatory headings. Give a full report only when the user's requested breadth warrants it; never repeat the same findings as summary, gap analysis, recommendations, and next actions.
 
-### Pre-Build Strategy
+- **Intake:** questions only until the initial vague request is framed.
+- **Narrow advice:** the requested paragraph, comparison, or numbered steps. Embed material caveats and checks inline; do not reopen a settled stack decision.
+- **Pre-build:** lead with the recommendation and constraint fit, then evidence, the main alternative/tradeoffs, first useful action and its proof, and what could reverse the decision.
+- **Mid-build/post-build:** lead with prioritized, file-grounded findings; distinguish what to keep, change, and defer. State inspection limits and the first correction's acceptance behavior, focused check, and broader regression scope.
 
-```md
-## Project Approach: <Project Name>
+Cite sources beside the claims they support. Include a short evidence ledger when research is material; no separate reference dump is needed if inline citations suffice. Describe missing evidence explicitly. For selected community sources, record which were actually consulted or unavailable.
 
-### TL;DR
-<Recommended approach and why.>
-
-### Project Frame
-<Goal, users, constraints, assumptions, success criteria, and evidence status.>
-
-### Evidence Reviewed
-<Compact evidence ledger: local/user evidence, external sources, observed dates, and research gaps.>
-
-### Decision Methodology
-<Constraints considered, decision criteria, and how comparables influenced or did not influence the recommendation.>
-
-### Comparable Projects and References
-1. **<Name>** - <URL>; <maintenance/adoption signal>; <why relevant>; <what transfers>; <what should not be copied>.
-
-### Recommended Stack
-<Frontend, backend, data, auth, hosting, testing, observability, and any key libraries.>
-
-### Cost and Vendor Reality
-<Pricing/limits checked, unverified cost assumptions, likely cost growth, lock-in, and lower-cost/self-hosted alternatives when relevant.>
-
-### Architecture Direction
-<How the project should be structured. Include a Mermaid or ASCII diagram when helpful.>
-
-### Alternatives Considered
-1. **<Option>** - <what you gain, what you give up, what becomes harder later, when it is wrong>.
-
-### Build Plan
-1. <First useful vertical slice>
-2. <Next slice>
-3. <Hardening/deploy/testing step>
-
-### Risks and Unknowns
-- <What could change the recommendation.>
-
-### References
-- <URL>
-```
-
-For a vague pre-build request, include an `Intake Summary` before `Project Frame`, or state that intake was skipped because the request already supplied sufficient constraints.
-
-### Mid-Build or Post-Build Review
-
-```md
-## Project Approach Review: <Project Name>
-
-### TL;DR
-<Verdict, most important course correction, and what to keep.>
-
-### Project Summary
-<What it appears to do, who it serves, current stack, architecture shape, and maturity.>
-
-### Evidence Reviewed
-- Commands run: <short list>
-- Files inspected: <short list of the most important files>
-- External references: <count or "not performed">
-- Evidence status: <local repo inspected | description only | GitHub URL only | mixed>
-- Inspection scope: <mapped / deeply inspected / sampled / skipped>
-
-### Decision Methodology
-<Constraints, criteria, comparable influence, transferable patterns, and limits of the recommendation.>
-
-### What Is Working
-- <Only real strengths, with evidence.>
-
-### Comparable Projects or Benchmarks
-1. **<Name>** - <URL>; <maintenance/adoption signal>; <why comparable>; <what transfers>; <what should not be copied>.
-
-### Gap Analysis
-<Specific gaps between this project, its goals, and credible comparables or ecosystem practice.>
-
-### Recommended Changes
-#### High Priority
-1. **<Change>** - <why, where, and expected impact>
-
-#### Medium Priority
-1. **<Change>** - <why, where, and expected impact>
-
-#### Low Priority
-1. **<Change>** - <why, where, and expected impact>
-
-### Stack and Architecture Verdict
-<Keep, adjust, or reconsider. Name tradeoffs and migration cost if relevant.>
-
-### Cost and Vendor Reality
-<Pricing/limits checked, unverified cost assumptions, likely cost growth, lock-in, and lower-cost/self-hosted alternatives when relevant.>
-
-### Risks, Assumptions, and Unknowns
-- <What could change the verdict.>
-
-### References
-- <URL or local file reference>
-```
-
-When community research was requested, include the selected sources and their coverage in `Evidence Reviewed`. When it was declined or unavailable, say so explicitly.
-
-The headings above are a completeness contract, not a demand for a long report. Merge adjacent sections for narrow questions, but preserve evidence status, alternatives, failure conditions, and next actions.
-
-Cap high-priority items at five. Keep the report direct and useful; do not bury the user in every possible improvement.
+Cap high-priority findings at five. When no length is requested, prefer a few concise paragraphs for one decision or a description-only advisory answer. Expand only for distinct evidence or decisions that matter.
 
 ## Failure Handling
 
-- **No accessible files** - ask for a path, archive, GitHub URL, or a short project description.
-- **Idea only** - proceed in pre-build mode using assumptions, and call out the top questions that would change the recommendation.
+- **No accessible files** - use an adequate description as provisional evidence; request a path or sample only for claims that require file inspection.
+- **Idea only** - follow the intake gate, then provide pre-build advice with accepted unknowns explicit.
 - **GitHub URL only** - inspect public README, file tree, manifests, and key files through available browsing or a temporary read-only clone. Do not assume private access.
 - **Tiny or empty project** - focus on project framing, stack choice, setup, basic structure, and first useful vertical slice.
 - **Monorepo** - ask for the target package/app, or do a shallow map and identify candidates for deeper review.
